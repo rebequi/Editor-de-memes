@@ -1,0 +1,74 @@
+
+/* //////////////// Estilos fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&family=Varela+Round&display=swap');
+
+
+/* //////////////// Final de estilos fuentes */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    display: flex;
+    color: #fafafa;
+   
+    font-family: 'Varela Round', sans-serif;
+}
+
+main {
+    flex-grow: 10;
+    background-color:#30343f;
+    height: 100vh;
+}
+
+/* //////////////// Inicio estilos para el Header */
+header {
+    background-color: #191e2b;
+    height: 100px;
+    padding: 10px;
+}
+ h1 {
+     text-align: center;
+ }
+
+ .list-button-edition {
+     display: flex;
+     justify-content: center;
+     
+ }
+
+
+
+ 
+
+ /* //////////////// Final de Estilos para el header */
+
+
+ /* //////////////// Inicio de Estilos para section*/
+
+section {
+    background-color: rgb(222, 180, 243);
+}
+
+ /* //////////////// Final de Estilos para section*/
+
+ 
+  /* //////////////// Inicio de estilos para Aside*/
+aside {
+    background-color: #252935;
+    width: 240px;
+    height: 100vh;
+    padding: 20px;
+    overflow:scroll;
+    
+}
+
+.container-inputs-aside {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+  /* //////////////// Final de estilos para Aside*/

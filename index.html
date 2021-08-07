@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Memes </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <div class="main-tittle">
+                <h1>
+                    Generador de Memes
+                </h1>
+
+            </div>
+           
+            <div class ="edition-buttons-container">
+                <ul class="list-button-edition">
+                    <li>Imagen</li>
+                    <li>Texto</li>
+                    <li>Modo oscuro</li>
+                </ul>
+
+            </div>
+        </header>
+
+        <section>
+
+            <p>
+                hola soy section dondde va la imagen
+            </p>
+        </section>
+    </main>
+    <aside>
+        <h2>
+            Imagen
+        </h2>
+        <div class="container-inputs-aside">
+            <div>
+                <label> URL<input type="text"></label>
+            </div>
+            <div>
+                <label> FONDO
+                    <input type="color">
+                    <select>
+                        <option>Ninguno</option>
+                        <option>Aclarar</option>
+                        <option>Oscurecer</option>
+                        <option>Diferencia</option>
+                        <option>Luminosidad</option>
+                        <option>Multiplicar</option>
+                    </select>
+                </label>
+            </div>
+            <div class = "inputs-for-filters">
+                <label>
+                    Filtros
+                <div class="slider-filter">
+
+                    <label>
+                        Brillo
+                        <input type="range" id="brightness-slider">
+                    </label>
+                    <label>
+                        Opacity
+                        <input type="range" id="opacity-slider">
+                    </label>
+                    <label>
+                        Contraste
+                        <input type="range" id="contrast-slider">
+                    </label>
+                    <label>
+                        Desenfoque
+                        <input type="range" id="blur-slider">
+                    </label>
+                    <label>
+                        Escala de grises
+                        <input type="range" id="grayscale-slider">
+                    </label>
+                    <label>
+                        Sepia
+                        <input type="range" id="sepia-slider">
+                    </label>
+
+                    <label>
+                       Hue
+                        <input type="range" id="hue-slider">
+                    </label>
+
+                    <label>
+                        Saturado
+                        <input type="range" id="saturation-slider">
+                    </label>
+
+                </div>
+                
+                
+            
+            </div>
+        </div>
+    </aside>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
