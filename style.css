@@ -69,6 +69,15 @@ aside {
     flex-wrap: wrap;
 }
 
+.slider-editor {
+    margin-top: 20px; 
+}
 
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background-color: darkcyan;
+}
 
   /* //////////////// Final de estilos para Aside*/
