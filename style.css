@@ -12,6 +12,7 @@
 body {
     display: flex;
     color: #fafafa;
+    overflow: hidden;
    
     font-family: 'Varela Round', sans-serif;
 }
@@ -30,6 +31,8 @@ header {
 }
  h1 {
      text-align: center;
+     margin-top: 5px;
+     margin-bottom: 30px;
  }
 
  .list-button-edition {
@@ -38,17 +41,23 @@ header {
      
  }
 
-
-
- 
+ .list-button-edition li {
+     list-style: none;
+     margin-right: 20px;
+     font-size: 14px;
+ }
 
  /* //////////////// Final de Estilos para el header */
 
 
  /* //////////////// Inicio de Estilos para section*/
 
-section {
-    background-color: rgb(222, 180, 243);
+.meme-container {
+    background-color: rgb(241, 87, 41);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
  /* //////////////// Final de Estilos para section*/
@@ -64,20 +73,58 @@ aside {
     
 }
 
-.container-inputs-aside {
-    display: flex;
-    flex-wrap: wrap;
+h2 {
+    text-align: center;
+    font-size: 18px;
+}
+h3 {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
+
+
+.input-for-url {
+    border: none;
+    background-color: #FF4C29;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.slider-editor > label {
+    font-size: 13px;
+}
 .slider-editor {
-    margin-top: 20px; 
+    margin-top: 15px; 
 }
 
 input[type="range"] {
     appearance: none;
     width: 100%;
-    height: 4px;
-    background-color: darkcyan;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #FF4C29;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 18px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
 
+.go-back-button {
+    background-color: #FF4C29;
+    border: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-family: 'Varela Round', sans-serif;
+    color: #fafafa;
+}
   /* //////////////// Final de estilos para Aside*/

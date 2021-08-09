@@ -12,6 +12,7 @@
 <body>
 
     <main>
+        <!-- ---------------------------------   HEADER   --------------------- -->
         <header>
             <div class="main-tittle">
                 <h1>
@@ -19,8 +20,8 @@
                 </h1>
 
             </div>
-           
-            <div class ="edition-buttons-container">
+
+            <div class="edition-buttons-container">
                 <ul class="list-button-edition">
                     <li>Imagen</li>
                     <li>Texto</li>
@@ -30,23 +31,42 @@
             </div>
         </header>
 
-        <section>
+        <!-- ---------------------------------   FINAL DEL HEADER   --------------------- -->
 
-            <p>
-                hola soy section dondde va la imagen
-            </p>
+         <!-- ---------------------------------   FINAL DEL CONTAINER MEME  --------------------- -->
+        
+
+        <section class="meme-container">
+
+            <div class="image-container">
+                <img class="mm-img" id="meme-image">
+
+            </div>
         </section>
+
+        <!-- ---------------------------------   FINAL DEL CONTAINER MEME  --------------------- -->
     </main>
+
+
+          <!-- ---------------------------------  INICIO DEL ASIDE -------------------------- -->
+
     <aside>
         <h2>
-            Imagen
+            IMAGEN
         </h2>
+
+          <!-- ----------------- INICIO PARA CONTAINER DE INPUTS ------------------- -->
         <div class="container-inputs-aside">
             <div>
-                <label> URL<input type="text"></label>
+                <h3>
+                    URL
+                </h3>
+                <label> <input type="text" id="input-for-url" class="input-for-url"></label>
             </div>
             <div>
-                <label> FONDO
+                <h3>FONDO</h3>
+
+                <label>
                     <input type="color">
                     <select>
                         <option>Ninguno</option>
@@ -58,72 +78,116 @@
                     </select>
                 </label>
             </div>
-            <div class = "inputs-for-filters">
-                <label>
+            <div class="inputs-for-filters">
+                <h3>
                     Filtros
-                <div class="slider-filter">
-                    <div class="slider-editor">
-                        <label>
-                            Brillo
-                            <input type="range" id="brightness-slider">
-                        </label>
-                    </div>
+                </h3>
+        
+                    <label>
+                    <div class="slider-filter">
+                        <!-- /////////// SLIDER PARA BRILLO ////////////// -->
+                        <div class="slider-editor">
+                            <label>
+                                Brillo
+                                <input type="range" id="brightness-slider">
+                            </label>
+                        </div>
 
-                    <div class="slider-editor">
-                        <label>
-                            Contraste
-                            <input type="range" id="contrast-slider">
-                        </label>
-                    </div>
-                    
-                    <div class="slider-editor">
-                        <label>
-                            Desenfoque
-                            <input type="range" id="blur-slider">
-                        </label>
-                    </div>
 
-                    <div class="slider-editor">
-                        <label>
-                            Escala de grises
-                            <input type="range" id="grayscale-slider">
-                        </label>
-                    </div>
+                        <!-- /////////// SLIDER PARA CONTRASTE ////////////// -->
+                        <div class="slider-editor">
 
-                    <div class="slider-editor">
-                        <label>
-                            Sepia
-                            <input type="range" id="sepia-slider">
-                        </label>
-                    </div>
+                            <label>
+                                Contraste
+                                <input type="range" id="contrast-slider">
+                            </label>
+                        </div>
 
-                    <div class="slider-editor">
-                        <label>
-                            Hue
-                             <input type="range" id="hue-slider">
-                         </label>
-                    
-                    </div>
-                    <div class="slider-editor">
-                        <label>
-                            Saturado
-                            <input type="range" id="saturation-slider">
-                        </label>
-    
-                    </div>
+                        <!-- /////////// SLIDER PARA DESENFOQUE ////////////// -->
 
-                    
+                        <div class="slider-editor">
+                            <label>
+                                Desenfoque
+                                <input type="range" id="blur-slider">
+                            </label>
+                        </div>
 
-                   
-                </div>
-                
-                
-            
+                         <!-- /////////// SLIDER PARA ESCALA DE GRISES ////////////// -->
+
+                        <div class="slider-editor">
+                            <label>
+                                Escala de grises
+                                <input type="range" id="grayscale-slider">
+                            </label>
+                        </div>
+
+                         <!-- /////////// SLIDER PARA SEPIA ////////////// -->
+
+                        <div class="slider-editor">
+                            <label>
+                                Sepia
+                                <input type="range" id="sepia-slider">
+                            </label>
+                        </div>
+
+                        <!-- /////////// SLIDER PARA HUE ////////////// -->
+
+                        <div class="slider-editor">
+                            <label>
+                                Hue
+                                <input type="range" id="hue-slider">
+                            </label>
+
+                            
+
+                        </div>
+
+                        <!-- /////////// SLIDER PARA SATURACION ////////////// -->
+                        <div class="slider-editor">
+                            <label>
+                                Saturado
+                                <input type="range" id="saturation-slider">
+                            </label>
+
+                        </div>
+
+                        <div class="slider-editor">
+
+                            <!-- /////////// SLIDER PARA NEGATIVO ////////////// -->
+                            <label>
+                                Negativo
+                                <input type="range" id="negative-slider">
+                            </label>
+
+                        </div>
+
+                        <div class="go-back">
+                             <!-- /////////// BOTON PARA REESTABLECER LOS FILTROS ////////////// -->
+
+                            <button class="go-back-button" id="go-back-button">
+                                Reestablecer filtros
+
+                            </button>
+
+                        </div>
+
+
+
+
+                    </div>
+            <!-- ----------------- FINAL PARA CONTAINER DE INPUTS ------------------- -->
+
+
             </div>
         </div>
     </aside>
 
+      <!-- -------------------------------  FINAL DEL ASIDE -------------------------- -->
 
+
+
+
+       <!-- -------------------------------  LINK AL ARCHIVO DE JS -------------------------- -->
     <script src="index.js"></script>
 </body>
 
