@@ -47,19 +47,29 @@ header {
      font-size: 14px;
  }
 
+.icon-header {
+    margin-right: 6px;
+}
+
+
  /* //////////////// Final de Estilos para el header */
 
 
  /* //////////////// Inicio de Estilos para section*/
 
 .meme-container {
-    background-color: rgb(241, 87, 41);
-    width: 400px;
-    height: 400px;
+    background-color: #30343f;
+    max-width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
+.image-container {
+    background-color: #fafafa;
+    width: 610px;
+    height: 100vh;
+}
  /* //////////////// Final de Estilos para section*/
 
  
@@ -91,7 +101,7 @@ h3 {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .slider-editor > label {
     font-size: 13px;
@@ -120,7 +130,8 @@ input[type=range]::-webkit-slider-thumb {
 
 .go-back-button {
     background-color: #FF4C29;
-    border: 0;
+    border: none;
+    border-radius: 5px;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 10px;
