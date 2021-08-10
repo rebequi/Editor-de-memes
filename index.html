@@ -49,11 +49,14 @@
     </main>
     <!-- ---------------------------------  INICIO DEL ASIDE -------------------------- -->
     <aside>
-        <h2>
+        <h2 class="image">
             IMAGEN
         </h2>
-        <!-- ----------------- INICIO PARA CONTAINER DE INPUTS ------------------- -->
-        <div class="container-inputs-aside">
+        <h2 class="text">
+            TEXTO
+        </h2>
+        <!-- ----------------- INICIO PARA CONTAINER DE INPUTS IMAGEN ------------------- -->
+        <div class="container-inputs-aside image">
             <div>
                 <h3>
                     URL
@@ -162,6 +165,20 @@
                     <!-- ----------------- FINAL PARA CONTAINER DE INPUTS ------------------- -->
             </div>
         </div>
+        <!-- INICIO PARA CONTAINER DE INPUTS TEXTO -->
+        <div class="container-inputs-aside text">
+            <div>
+                <h3>
+                    SUPERIOR
+                </h3>
+                <label>
+                    <textarea aria-label="Texto superior" id="input-for-text" class="input-text" placeholder="TOP TEXT"></textarea>
+                </label>
+                <input type="checkbox" name="hide-top-text" id="hide-top-text">
+                <label for="hide-top-text">Sin texto superior</label>
+            </div>
+        </div>
+
     </aside>
 
     <!-- -------------------------------  FINAL DEL ASIDE -------------------------- -->
