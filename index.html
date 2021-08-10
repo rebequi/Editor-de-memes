@@ -61,7 +61,7 @@
                 <h3>
                     URL
                 </h3>
-                <label> <input type="text" id="input-for-url" class="input-for-url"></label>
+                <label> <input type="text" id="input-for-url" class="input-text"></label>
             </div>
             <div>
                 <h3>FONDO</h3>
@@ -156,7 +156,7 @@
                         <div class="go-back">
                             <!-- /////////// BOTON PARA REESTABLECER LOS FILTROS ////////////// -->
 
-                            <button class="go-back-button" id="go-back-button">
+                            <button class="button" id="go-back-button">
                                 Reestablecer filtros
                             </button>
 
@@ -167,16 +167,64 @@
         </div>
         <!-- INICIO PARA CONTAINER DE INPUTS TEXTO -->
         <div class="container-inputs-aside text">
-            <div>
+            <div class="text-option-container">
                 <h3>
                     SUPERIOR
                 </h3>
                 <label>
                     <textarea aria-label="Texto superior" id="input-for-text" class="input-text" placeholder="TOP TEXT"></textarea>
                 </label>
-                <input type="checkbox" name="hide-top-text" id="hide-top-text">
-                <label for="hide-top-text">Sin texto superior</label>
+                <div class="checkbox-items">
+                    <input type="checkbox" name="hide-top-text" id="hide-top-text-checkbox" >
+                    <label for="hide-top-text">Sin texto superior</label>
+                </div>
             </div>
+
+            <div class="text-option-container">
+                <h3>
+                    INFERIOR
+                </h3>
+                <label>
+                    <textarea aria-label="Texto inferior" id="input-for-text" class="input-text" placeholder="BOTTOM TEXT"></textarea>
+                </label>
+                <div class="checkbox-items">
+                    <input type="checkbox" name="hide-bottom-text" id="hide-bottom-text-checkbox" >
+                    <label for="hide-top-text">Sin texto inferior</label>
+                </div>
+            </div>
+
+            <div class="text-option-container">
+                <h3>FUENTE</h3>
+                <select name="Font family" id="font-family-select" class="input-text">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact" selected="">Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+
+                <div class="font-items">
+                    <div class="font-size-input-container">
+                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="input-text" id="font-size-input" min="12">
+                    </div>
+                    <div class="text-align-buttons">
+                        <button class="button" id="text-left-align-button">
+                            <i class="fas fa-align-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="button" id="text-center-align-button">
+                            <i class="fas fa-align-center" aria-hidden="true"></i>
+                        </button>
+                        <button class="button" id="text-right-align-button">
+                            <i class="fas fa-align-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </aside>
