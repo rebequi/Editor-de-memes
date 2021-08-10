@@ -166,6 +166,7 @@
             </div>
         </div>
         <!-- INICIO PARA CONTAINER DE INPUTS TEXTO -->
+        <!-- TEXTO SUPERIOR -->
         <div class="container-inputs-aside text">
             <div class="text-option-container">
                 <h3>
@@ -180,6 +181,7 @@
                 </div>
             </div>
 
+            <!-- TEXTO INFERIOR -->
             <div class="text-option-container">
                 <h3>
                     INFERIOR
@@ -193,6 +195,7 @@
                 </div>
             </div>
 
+            <!-- TIPO DE FUENTE -->
             <div class="text-option-container">
                 <h3>FUENTE</h3>
                 <select name="Font family" id="font-family-select" class="input-text">
@@ -207,11 +210,12 @@
                     <option value="Times New Roman">Times New Roman</option>
                 </select>
 
+                <!-- OPCIONES DE FUENTE -->
                 <div class="font-items">
                     <div class="font-size-input-container">
                         <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="input-text" id="font-size-input" min="12">
                     </div>
-                    <div class="text-align-buttons">
+                    <div class="buttons-container">
                         <button class="button" id="text-left-align-button">
                             <i class="fas fa-align-left" aria-hidden="true"></i>
                         </button>
@@ -222,6 +226,40 @@
                             <i class="fas fa-align-right" aria-hidden="true"></i>
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <!-- OPCIONES DE COLOR -->
+            <div>
+                <div class="color-items">
+                    <div class="font-color-container">
+                        <h3>COLOR</h3>
+                        <input type="color" id="text-color-input" name="Color de texto">
+                    </div>
+                    <div class="background-color-container">
+                        <h3>FONDO</h3>
+                        <input type="color" id="background-color-input" name="Color de fondo">
+                    </div>
+                </div>
+                <div class="checkbox-items">
+                    <input type="checkbox" name="no-background-color" id="no-background-color" >
+                    <label for="transparent-background">Fondo transparente</label>
+                </div>
+            </div>
+
+            <!-- CONTORNO -->
+            <div class="outline">
+                <h3>CONTORNO</h3>
+                <div class="buttons-container">
+                    <button class="button" id="outline-none-button">
+                        <p>Ninguno</p>
+                    </button>
+                    <button class="button" id="outline-light-button">
+                        <p>Claro</p>
+                    </button>
+                    <button class="button" id="outline-dark-button">
+                        <p>Oscuro</p>
+                    </button>
                 </div>
             </div>
 

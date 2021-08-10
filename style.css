@@ -151,8 +151,6 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #FF4C29;
     border: none;
     border-radius: 5px;
-    margin-top: 30px;
-    margin-bottom: 30px;
     padding: 10px;
     font-family: 'Varela Round', sans-serif;
     color: #fafafa;
@@ -170,17 +168,28 @@ input[type=range]::-webkit-slider-thumb {
 .font-items {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 45px;
-}
-.text-align-buttons {
-    width: 43%;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 5px;
 }
 
 .font-size-input-container {
     width: 55%;
+}
+
+.buttons-container {
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+.color-items {
+    display: flex;
+}
+
+.font-color-container {
+    width: 50%;
+}
+
+.background-color-container {
+    width: 50%;
 }
 
 /* //////////////// Final de estilos para Aside*/
