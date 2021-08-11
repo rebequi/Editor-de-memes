@@ -40,6 +40,9 @@
         <section class="meme-container">
 
             <div class="image-container">
+                <div>
+                   <p id="top-text" class="textOverImage">TOP TEXT</p> 
+                </div>
                 <img class="mm-img" id="meme-image">
 
             </div>
@@ -232,13 +235,19 @@
             <!-- OPCIONES DE COLOR -->
             <div>
                 <div class="color-items">
-                    <div class="font-color-container">
+                    <div class="color-container">
                         <h3>COLOR</h3>
-                        <input type="color" id="text-color-input" name="Color de texto">
+                        <div class="input-text">
+                            <input type="color" id="text-color-input" name="Color de texto">
+                            <span id="text-color" aria-hidden="true">#000000</span>
+                        </div>
                     </div>
-                    <div class="background-color-container">
+                    <div class="color-container">
                         <h3>FONDO</h3>
-                        <input type="color" id="background-color-input" name="Color de fondo">
+                        <div class="input-text">
+                            <input type="color" id="background-color-input" name="Color de fondo">
+                            <span id="background-color" aria-hidden="true">#000000</span>
+                        </div>
                     </div>
                 </div>
                 <div class="checkbox-items">
@@ -261,6 +270,18 @@
                         <p>Oscuro</p>
                     </button>
                 </div>
+            </div>
+
+            <!-- ESPACIADO -->
+            <div>
+                <h3>ESPACIADO</h3>
+                <input type="number" name="Espaciado" aria-label="Espaciado" class="input-text" id="spacing" min="12">
+            </div>
+
+            <!-- INTERLINEADO -->
+            <div>
+                <h3>INTERLINEADO</h3>
+                <input type="number" name="Interlineado" aria-label="Interlineado" class="input-text" id="line-heigth" min="12">
             </div>
 
         </div>

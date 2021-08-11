@@ -66,9 +66,11 @@ header {
 }
 
 .image-container {
-    background-color: #fafafa;
+    background-color: red;
     width: 610px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
  /* //////////////// Final de Estilos para section*/
 
@@ -97,10 +99,6 @@ h3 {
     margin-bottom: 15px;
 }
 
-.text-option-container {
-    margin-bottom: 25px;
-}
-
 .input-text {
     border: none;
     background-color: #FF4C29;
@@ -111,6 +109,8 @@ h3 {
     padding: 10px 5px;
     border-radius: 5px;
     color: #FFFFFF;
+    display: flex;
+    align-items: center;
 }
 
 .input-text:focus {
@@ -182,14 +182,42 @@ input[type=range]::-webkit-slider-thumb {
 
 .color-items {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.font-color-container {
-    width: 50%;
+.color-container {
+    width: 48%;
 }
 
-.background-color-container {
-    width: 50%;
+input[type="color"] {
+    -webkit-appearance: none;
+	border: none;
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+    
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+    border-radius: 50%;
+}
+
+#text-color, #background-color {
+    padding-left: 10px;
 }
 
 /* //////////////// Final de estilos para Aside*/
+
+/* Estilos para JS */
+.textOverImage {
+    color: #000;
+    background-color: #FFFFFF;
+    padding: 30px;
+    text-align: center;
+}
