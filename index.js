@@ -7,6 +7,7 @@ const inputBottomText = document.getElementById("input-for-bottom-text")
 // Ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
 const hideTopTextContainer = document.getElementById("top-text-container")
+const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
 const hideBottomTextContainer = document.getElementById("bottom-text-container")
 
 // Funciones para textos sobre imagen
@@ -21,7 +22,7 @@ const bottomTextDisplayOnImage = (event) => {
 inputTopText.oninput = topTextDisplayOnImage
 inputBottomText.oninput = bottomTextDisplayOnImage
 
-// Funciones para oultar textos sobre imagen
+// Funciones para ocultar textos sobre imagen
 const hideTopText = () => {
   const hideTopTextCheckboxStatus = hideTopTextCheckbox.checked
   if (hideTopTextCheckboxStatus == true) {
@@ -33,3 +34,15 @@ const hideTopText = () => {
 }
 
 hideTopTextCheckbox.onchange = hideTopText
+
+const hideBottomText = () => {
+  const hideBottomTextCheckboxStatus = hideBottomTextCheckbox.checked
+  if (hideBottomTextCheckboxStatus == true) {
+    hideBottomTextContainer.style.display = "none"
+  } 
+  else {
+    hideBottomTextContainer.style.display = "block"
+  }
+}
+
+hideBottomTextCheckbox.onchange = hideBottomText

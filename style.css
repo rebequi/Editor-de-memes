@@ -100,7 +100,7 @@ h3 {
     margin-bottom: 15px;
 }
 
-.input-text {
+.input-custom {
     border: none;
     background-color: #FF4C29;
     width: 100%;
@@ -114,11 +114,11 @@ h3 {
     align-items: center;
 }
 
-.input-text:focus {
+.input-custom:focus {
     outline: none;
 }
 
-.input-text::placeholder {
+.input-custom::placeholder {
     color: #FFFFFF;
 }
 
