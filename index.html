@@ -40,11 +40,13 @@
         <section class="meme-container">
 
             <div class="image-container">
-                <div>
+                <div id="top-text-container">
                    <p id="top-text" class="textOverImage">TOP TEXT</p> 
                 </div>
                 <img class="mm-img" id="meme-image">
-
+                <div id="bottom-text-container">
+                    <p id="bottom-text" class="textOverImage">TOP TEXT</p> 
+                 </div>
             </div>
         </section>
 
@@ -176,10 +178,10 @@
                     SUPERIOR
                 </h3>
                 <label>
-                    <textarea aria-label="Texto superior" id="input-for-text" class="input-text" placeholder="TOP TEXT"></textarea>
+                    <textarea aria-label="Texto superior" id="input-for-top-text" class="input-text" placeholder="TOP TEXT"></textarea>
                 </label>
                 <div class="checkbox-items">
-                    <input type="checkbox" name="hide-top-text" id="hide-top-text-checkbox" >
+                    <input type="checkbox" name="hide-top-text" id="hide-top-text-checkbox">
                     <label for="hide-top-text">Sin texto superior</label>
                 </div>
             </div>
@@ -190,7 +192,7 @@
                     INFERIOR
                 </h3>
                 <label>
-                    <textarea aria-label="Texto inferior" id="input-for-text" class="input-text" placeholder="BOTTOM TEXT"></textarea>
+                    <textarea aria-label="Texto inferior" id="input-for-bottom-text" class="input-text" placeholder="BOTTOM TEXT"></textarea>
                 </label>
                 <div class="checkbox-items">
                     <input type="checkbox" name="hide-bottom-text" id="hide-bottom-text-checkbox" >

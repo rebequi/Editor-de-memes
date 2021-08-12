@@ -68,9 +68,10 @@ header {
 .image-container {
     background-color: red;
     width: 610px;
-    height: 100vh;
+    height: 610px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
  /* //////////////// Final de Estilos para section*/
 
@@ -220,4 +221,6 @@ input[type="color"]::-webkit-color-swatch {
     background-color: #FFFFFF;
     padding: 30px;
     text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 44px;
 }
