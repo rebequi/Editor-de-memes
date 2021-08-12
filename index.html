@@ -40,8 +40,13 @@
         <section class="meme-container">
 
             <div class="image-container">
+                <div id="top-text-container">
+                   <p id="top-text" class="textOverImage">TOP TEXT</p> 
+                </div>
                 <img class="mm-img" id="meme-image">
-
+                <div id="bottom-text-container">
+                    <p id="bottom-text" class="textOverImage">BOTTOM TEXT</p> 
+                 </div>
             </div>
         </section>
 
@@ -49,16 +54,19 @@
     </main>
     <!-- ---------------------------------  INICIO DEL ASIDE -------------------------- -->
     <aside>
-        <h2>
+        <h2 class="image">
             IMAGEN
         </h2>
-        <!-- ----------------- INICIO PARA CONTAINER DE INPUTS ------------------- -->
-        <div class="container-inputs-aside">
+        <h2 class="text">
+            TEXTO
+        </h2>
+        <!-- ----------------- INICIO PARA CONTAINER DE INPUTS IMAGEN ------------------- -->
+        <div class="container-inputs-aside image">
             <div>
                 <h3>
                     URL
                 </h3>
-                <label> <input type="text" id="input-for-url" class="input-for-url"></label>
+                <label> <input type="text" id="input-for-url" class="input-custom"></label>
             </div>
             <div>
                 <h3>FONDO</h3>
@@ -153,7 +161,7 @@
                         <div class="go-back">
                             <!-- /////////// BOTON PARA REESTABLECER LOS FILTROS ////////////// -->
 
-                            <button class="go-back-button" id="go-back-button">
+                            <button class="button" id="go-back-button">
                                 Reestablecer filtros
                             </button>
 
@@ -162,6 +170,124 @@
                     <!-- ----------------- FINAL PARA CONTAINER DE INPUTS ------------------- -->
             </div>
         </div>
+        <!-- INICIO PARA CONTAINER DE INPUTS TEXTO -->
+        <!-- TEXTO SUPERIOR -->
+        <div class="container-inputs-aside text">
+            <div class="text-option-container">
+                <h3>
+                    SUPERIOR
+                </h3>
+                <label>
+                    <textarea aria-label="Texto superior" id="input-for-top-text" class="input-custom" placeholder="TOP TEXT"></textarea>
+                </label>
+                <div class="checkbox-items">
+                    <input type="checkbox" name="hide-top-text" id="hide-top-text-checkbox">
+                    <label for="hide-top-text">Sin texto superior</label>
+                </div>
+            </div>
+
+            <!-- TEXTO INFERIOR -->
+            <div class="text-option-container">
+                <h3>
+                    INFERIOR
+                </h3>
+                <label>
+                    <textarea aria-label="Texto inferior" id="input-for-bottom-text" class="input-custom" placeholder="BOTTOM TEXT"></textarea>
+                </label>
+                <div class="checkbox-items">
+                    <input type="checkbox" name="hide-bottom-text" id="hide-bottom-text-checkbox" >
+                    <label for="hide-top-text">Sin texto inferior</label>
+                </div>
+            </div>
+
+            <!-- TIPO DE FUENTE -->
+            <div class="text-option-container">
+                <h3>FUENTE</h3>
+                <select name="Font family" id="font-family-select" class="input-custom">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact" selected="">Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+
+                <!-- OPCIONES DE FUENTE -->
+                <div class="font-items">
+                    <div class="font-size-input-container">
+                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="input-custom" id="font-size-input" min="12">
+                    </div>
+                    <div class="buttons-container">
+                        <button class="button" id="text-left-align-button">
+                            <i class="fas fa-align-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="button" id="text-center-align-button">
+                            <i class="fas fa-align-center" aria-hidden="true"></i>
+                        </button>
+                        <button class="button" id="text-right-align-button">
+                            <i class="fas fa-align-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPCIONES DE COLOR -->
+            <div>
+                <div class="color-items">
+                    <div class="color-container">
+                        <h3>COLOR</h3>
+                        <div class="input-custom">
+                            <input type="color" id="text-color-input" name="Color de texto">
+                            <span id="text-color" aria-hidden="true">#000000</span>
+                        </div>
+                    </div>
+                    <div class="color-container">
+                        <h3>FONDO</h3>
+                        <div class="input-custom">
+                            <input type="color" id="background-color-input" name="Color de fondo">
+                            <span id="background-color" aria-hidden="true">#000000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkbox-items">
+                    <input type="checkbox" name="no-background-color" id="no-background-color" >
+                    <label for="transparent-background">Fondo transparente</label>
+                </div>
+            </div>
+
+            <!-- CONTORNO -->
+            <div class="outline">
+                <h3>CONTORNO</h3>
+                <div class="buttons-container">
+                    <button class="button" id="outline-none-button">
+                        <p>Ninguno</p>
+                    </button>
+                    <button class="button" id="outline-light-button">
+                        <p>Claro</p>
+                    </button>
+                    <button class="button" id="outline-dark-button">
+                        <p>Oscuro</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ESPACIADO -->
+            <div>
+                <h3>ESPACIADO</h3>
+                <input type="number" name="Espaciado" aria-label="Espaciado" class="input-custom" id="spacing" min="12">
+            </div>
+
+            <!-- INTERLINEADO -->
+            <div>
+                <h3>INTERLINEADO</h3>
+                <input type="number" name="Interlineado" aria-label="Interlineado" class="input-custom" id="line-heigth" min="12">
+            </div>
+
+        </div>
+
     </aside>
 
     <!-- -------------------------------  FINAL DEL ASIDE -------------------------- -->
