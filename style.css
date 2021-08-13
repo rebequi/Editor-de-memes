@@ -224,3 +224,7 @@ input[type="color"]::-webkit-color-swatch {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 44px;
 }
+
+.text {
+    display: none;
+}
