@@ -47,4 +47,4 @@ const hideBottomText = () => {
 
 hideBottomTextCheckbox.onchange = hideBottomText
 
-//test
+//test x2
