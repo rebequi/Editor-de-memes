@@ -46,3 +46,36 @@ const hideBottomText = () => {
 }
 
 hideBottomTextCheckbox.onchange = hideBottomText
+
+
+////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
+const inputURLdeImagen = document.getElementById ("input-for-url")
+const contenedorDeMeme = document.getElementById ("meme-image")
+
+// Funcion para agregar URL al input 
+
+
+inputURLdeImagen.oninput = ()=> {
+    contenedorDeMeme.src = inputURLdeImagen.value
+}
+
+
+// ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
+
+const botonParaAbrirPanelDeTexto = document.getElementById ("text-panel-button")
+// console.log (botonParaAbrirPanelDeTexto)
+const botonParaAbrirPanelDeImagen = document.getElementById ("image-panel-button")
+// console.log (botonParaAbrirPanelDeImagen)
+const panelDeTexto = document.getElementsByClassName("text")
+// console.log(panelDeTexto)
+
+const panelDeImagen = document.getElementsByClassName("image")
+// console.log(panelDeImagen)
+
+
+// quiero abrir el panel de imagen
+
+
+botonParaAbrirPanelDeImagen.onclick = () =>{
+    panelDeImagen.classList.remove("hidden")
+}

@@ -27,8 +27,8 @@
             <div class="edition-buttons-container">
                 <ul class="list-button-edition">
                     
-                    <li><i class="fas fa-images icon-header"></i>Imagen</li>
-                    <li><i class="fas fa-heading icon-header"></i>Texto</li>
+                    <li id="image-panel-button"><i class="fas fa-images icon-header"></i>Imagen</li>
+                    <li id="text-panel-button"><i class="fas fa-heading icon-header"></i>Texto</li>
                     <li><i class="far fa-lightbulb icon-header"></i>Modo oscuro</li>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
                 <div id="top-text-container">
                    <p id="top-text" class="textOverImage">TOP TEXT</p> 
                 </div>
-                <img class="mm-img" id="meme-image">
+                <img class="mm-img" id="meme-image" src="">
                 <div id="bottom-text-container">
                     <p id="bottom-text" class="textOverImage">BOTTOM TEXT</p> 
                  </div>
@@ -54,14 +54,13 @@
     </main>
     <!-- ---------------------------------  INICIO DEL ASIDE -------------------------- -->
     <aside>
-        <h2 class="image">
-            IMAGEN
-        </h2>
-        <h2 class="text">
-            TEXTO
-        </h2>
+        
+        
         <!-- ----------------- INICIO PARA CONTAINER DE INPUTS IMAGEN ------------------- -->
-        <div class="container-inputs-aside image">
+        <div class="container-inputs-aside image hidden">
+            <h2 class="image">
+                IMAGEN
+            </h2>
             <div>
                 <h3>
                     URL
@@ -173,6 +172,9 @@
         <!-- INICIO PARA CONTAINER DE INPUTS TEXTO -->
         <!-- TEXTO SUPERIOR -->
         <div class="container-inputs-aside text">
+            <h2 class="text">
+                TEXTO
+            </h2>
             <div class="text-option-container">
                 <h3>
                     SUPERIOR
