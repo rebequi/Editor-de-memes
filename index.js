@@ -48,34 +48,55 @@ const hideBottomText = () => {
 hideBottomTextCheckbox.onchange = hideBottomText
 
 
-////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
-const inputURLdeImagen = document.getElementById ("input-for-url")
-const contenedorDeMeme = document.getElementById ("meme-image")
 
-// Funcion para agregar URL al input 
-
-
-inputURLdeImagen.oninput = ()=> {
-    contenedorDeMeme.src = inputURLdeImagen.value
-}
 
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
-const botonParaAbrirPanelDeTexto = document.getElementById ("text-panel-button")
-// console.log (botonParaAbrirPanelDeTexto)
-const botonParaAbrirPanelDeImagen = document.getElementById ("image-panel-button")
-// console.log (botonParaAbrirPanelDeImagen)
-const panelDeTexto = document.getElementsByClassName("text")
-// console.log(panelDeTexto)
+const buttonForTextPanel = document.getElementById ("text-panel-button")
+const buttonForImagePanel = document.getElementById ("image-panel-button")
+const imagePanel= document.getElementById("panel-for-image")
+const textPanel= document.getElementById("panel-for-text")
 
-const panelDeImagen = document.getElementsByClassName("image")
-// console.log(panelDeImagen)
+// Funcion para abrir el panel de Imagen
 
-
-// quiero abrir el panel de imagen
-
-
-botonParaAbrirPanelDeImagen.onclick = () =>{
-    panelDeImagen.classList.remove("hidden")
+const showImagePanel = () => {
+    const textPanelIsOn = textPanel.style.display = "block"
+    if (textPanelIsOn) {
+        imagePanel.style.display = "block"
+        textPanel.style.display = "none"
+    
+    }
+  
+    
 }
+
+// Funcion para abrir el panel de Texto
+
+
+const showTextPanel = () => {
+    const ImagePanelIsOn = imagePanel.style.display = "block"
+    if (ImagePanelIsOn) {
+        textPanel.style.display = "block"
+        imagePanel.style.display = "none"
+    }
+    
+}
+
+buttonForImagePanel.onclick = showImagePanel
+buttonForTextPanel.onclick = showTextPanel
+
+
+
+////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
+const inputURLofImage = document.getElementById ("input-for-url")
+const memeContainer = document.getElementById ("meme-image")
+
+// Funcion para agregar URL al input 
+
+
+inputURLofImage.oninput = ()=> {
+    memeContainer.src = inputURLdeImagen.value
+}
+
+

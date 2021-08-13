@@ -225,6 +225,6 @@ input[type="color"]::-webkit-color-swatch {
     font-size: 44px;
 }
 
-.hidden {
+.hidden{
     display: none;
 }
