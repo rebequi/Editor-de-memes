@@ -46,3 +46,5 @@ const hideBottomText = () => {
 }
 
 hideBottomTextCheckbox.onchange = hideBottomText
+
+//test
