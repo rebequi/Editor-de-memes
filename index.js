@@ -48,9 +48,6 @@ const hideBottomText = () => {
 hideBottomTextCheckbox.onchange = hideBottomText
 
 
-
-
-
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
 const buttonForTextPanel = document.getElementById ("text-panel-button")
@@ -65,14 +62,10 @@ const showImagePanel = () => {
     if (textPanelIsOn) {
         imagePanel.style.display = "block"
         textPanel.style.display = "none"
-    
     }
-  
-    
 }
 
 // Funcion para abrir el panel de Texto
-
 
 const showTextPanel = () => {
     const ImagePanelIsOn = imagePanel.style.display = "block"
@@ -80,23 +73,20 @@ const showTextPanel = () => {
         textPanel.style.display = "block"
         imagePanel.style.display = "none"
     }
-    
 }
 
 buttonForImagePanel.onclick = showImagePanel
 buttonForTextPanel.onclick = showTextPanel
 
-
-
 ////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
 const inputURLofImage = document.getElementById ("input-for-url")
 const memeContainer = document.getElementById ("meme-image")
+console.log (memeContainer)
 
 // Funcion para agregar URL al input 
 
-
 inputURLofImage.oninput = ()=> {
-    memeContainer.src = inputURLdeImagen.value
+    memeContainer.src = inputURLofImage.value
 }
 
 
