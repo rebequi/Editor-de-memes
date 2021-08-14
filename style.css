@@ -219,6 +219,10 @@ input[type="color"]::-webkit-color-swatch {
     padding-left: 10px;
 }
 
+textarea {
+    font-family: 'Varela Round', sans-serif;
+}
+
 /* //////////////// Final de estilos para Aside*/
 
 /* Estilos para JS */

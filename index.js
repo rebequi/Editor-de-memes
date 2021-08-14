@@ -1,8 +1,10 @@
-// Variables de textos sobre imagen
+// Variables de textos
 const topText = document.getElementById("top-text")
 const inputTopText = document.getElementById("input-for-top-text")
 const bottomText = document.getElementById("bottom-text")
 const inputBottomText = document.getElementById("input-for-bottom-text")
+const fontFamilySelect = document.getElementById("font-family-select")
+const inputFontSize = document.getElementById("font-size-input")
 
 // Variables de ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
@@ -10,10 +12,12 @@ const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
 const hideBottomTextContainer = document.getElementById("bottom-text-container")
 
-// Variables de cambio de fonts
-const fontFamilySelect = document.getElementById("font-family-select")
-// const selectedFont = element.options[element.selectedIndex].value;
-// const checkText = element.options[element.selectedIndex].text;
+// Variables de justificar textos
+const buttonAlignLeft = document.getElementById("text-left-align-button")
+const buttonAlignCenter = document.getElementById("text-center-align-button")
+const buttonAlignRight = document.getElementById("text-right-align-button")
+
+
 
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
@@ -57,10 +61,29 @@ const hideText = (posicion) => {
 const fontFamily = (event) => {
   const selectedFont = event.target.value
   topText.style.fontFamily = selectedFont
+  bottomText.style.fontFamily = selectedFont
 }
 
 fontFamilySelect.onchange = fontFamily
 
+// Funcion para cambio de tamaño de texto
+const fontSize = (event) => {
+  const fontSizeValue = event.target.value
+  topText.style.fontSize = fontSizeValue + "px"
+  bottomText.style.fontSize = fontSizeValue + "px"
+}
+
+inputFontSize.onchange = fontSize
+
+// Funcion de botones para justificar texto
+buttonAlignLeft.onclick = () => textAlignButtons("left")
+buttonAlignCenter.onclick = () => textAlignButtons("center")
+buttonAlignRight.onclick = () => textAlignButtons("right")
+
+const textAlignButtons = (selected) => {
+  topText.style.textAlign = selected
+  bottomText.style.textAlign = selected
+  }
 
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
