@@ -43,7 +43,11 @@
                 <div id="top-text-container">
                    <p id="top-text" class="textOverImage">TOP TEXT</p> 
                 </div>
-                <img class="mm-img" id="meme-image" src="">
+                <div class="meme">
+    
+                    <div class="mm-img" id="meme-image" aria-label="Imagen del meme"></div>
+                </div>
+                
                 <div id="bottom-text-container">
                     <p id="bottom-text" class="textOverImage">BOTTOM TEXT</p> 
                  </div>
@@ -54,7 +58,6 @@
     </main>
     <!-- ---------------------------------  INICIO DEL ASIDE -------------------------- -->
     <aside>
-        
         
         <!-- ----------------- INICIO PARA CONTAINER DE INPUTS IMAGEN ------------------- -->
         <div class="container-inputs-aside image" id="panel-for-image">
@@ -71,14 +74,14 @@
                 <h3>FONDO</h3>
 
                 <label>
-                    <input type="color">
-                    <select>
-                        <option>Ninguno</option>
-                        <option>Aclarar</option>
-                        <option>Oscurecer</option>
-                        <option>Diferencia</option>
-                        <option>Luminosidad</option>
-                        <option>Multiplicar</option>
+                    <input type="color" id="color-for-background">
+                    <select id="blend-input">
+                        <option value="none">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="dark">Oscurecer</option>
+                        <option value="sharpen">Diferencia</option>
+                        <option value="clarity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
                     </select>
                 </label>
             </div>
@@ -92,15 +95,24 @@
                         <div class="slider-editor">
                             <label>
                                 Brillo
-                                <input type="range" id="brightness-slider">
+                                <input type="range" id="brightness-slider" step="0.1" min="0" max="1" value="1">
                             </label>
                         </div>
+
+                        <!-- /////////// SLIDER PARA Opacidad ////////////// -->
+                        <div class="slider-editor">
+                            <label>
+                                Opacidad
+                                <input type="range" id="opacity-slider" step="0.1" min="0" max="1" value="1">
+                            </label>
+                        </div>
+
                         <!-- /////////// SLIDER PARA CONTRASTE ////////////// -->
                         <div class="slider-editor">
 
                             <label>
                                 Contraste
-                                <input type="range" id="contrast-slider">
+                                <input type="range" id="contrast-slider" step="1" min="100" max="1000" value="100">
                             </label>
                         </div>
 
@@ -109,7 +121,7 @@
                         <div class="slider-editor">
                             <label>
                                 Desenfoque
-                                <input type="range" id="blur-slider">
+                                <input type="range" id="blur-slider" step="0.1" min="0" max="10" value="0">
                             </label>
                         </div>
 
@@ -118,7 +130,7 @@
                         <div class="slider-editor">
                             <label>
                                 Escala de grises
-                                <input type="range" id="grayscale-slider">
+                                <input type="range" id="grayscale-slider" step="1" min="0" max="100" value="0">
                             </label>
                         </div>
 
@@ -127,7 +139,7 @@
                         <div class="slider-editor">
                             <label>
                                 Sepia
-                                <input type="range" id="sepia-slider">
+                                <input type="range" id="sepia-slider" step="1" min="0" max="100" value="0">
                             </label>
                         </div>
 
@@ -136,7 +148,7 @@
                         <div class="slider-editor">
                             <label>
                                 Hue
-                                <input type="range" id="hue-slider">
+                                <input type="range" id="hue-slider" step="1" min="0" max="359" value="0">
                             </label>
                         </div>
 
@@ -144,7 +156,7 @@
                         <div class="slider-editor">
                             <label>
                                 Saturado
-                                <input type="range" id="saturation-slider">
+                                <input type="range" id="saturation-slider" step="10" min="100" max="1000" value="100">
                             </label>
                         </div>
                         <div class="slider-editor">
@@ -152,7 +164,7 @@
                             <!-- /////////// SLIDER PARA NEGATIVO ////////////// -->
                             <label>
                                 Negativo
-                                <input type="range" id="negative-slider">
+                                <input type="range" id="negative-slider" step="0.1" min="0" max="1" value="1">
                             </label>
 
                         </div>
