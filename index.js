@@ -17,7 +17,9 @@ const buttonAlignLeft = document.getElementById("text-left-align-button")
 const buttonAlignCenter = document.getElementById("text-center-align-button")
 const buttonAlignRight = document.getElementById("text-right-align-button")
 
-
+// Variables de colores
+const textColorInput = document.getElementById("text-color-input")
+const backgroundColorInput = document.getElementById("background-color-input")
 
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
@@ -126,5 +128,3 @@ console.log (memeContainer)
 inputURLofImage.oninput = ()=> {
     memeContainer.src = inputURLofImage.value
 }
-
-
