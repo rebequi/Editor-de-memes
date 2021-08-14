@@ -32,7 +32,7 @@ header {
  h1 {
      text-align: center;
      margin-top: 5px;
-     margin-bottom: 30px;
+     margin-bottom: 20px;
  }
 
  .list-button-edition {
@@ -49,6 +49,17 @@ header {
 
 .icon-header {
     margin-right: 6px;
+}
+
+.panel-button {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.panel-button:hover {
+    background-color: #4f5872;
+    cursor: pointer;
 }
 
 
