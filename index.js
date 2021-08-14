@@ -1,14 +1,19 @@
-// Textos sobre imagen
+// Variables de textos sobre imagen
 const topText = document.getElementById("top-text")
 const inputTopText = document.getElementById("input-for-top-text")
 const bottomText = document.getElementById("bottom-text")
 const inputBottomText = document.getElementById("input-for-bottom-text")
 
-// Ocultar textos sobre imagen
+// Variables de ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
 const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
 const hideBottomTextContainer = document.getElementById("bottom-text-container")
+
+// Variables de cambio de fonts
+const fontFamilySelect = document.getElementById("font-family-select")
+// const selectedFont = element.options[element.selectedIndex].value;
+// const checkText = element.options[element.selectedIndex].text;
 
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
@@ -23,7 +28,6 @@ inputTopText.oninput = topTextDisplayOnImage
 inputBottomText.oninput = bottomTextDisplayOnImage
 
 // Funcion para ocultar textos sobre imagen
-
 hideTopTextCheckbox.onchange = () => hideText("top")
 hideBottomTextCheckbox.onchange = () => hideText("bottom")
 
@@ -47,6 +51,17 @@ const hideText = (posicion) => {
     }
   }
 }
+
+
+// Funcion para cambio de fonts
+const fontFamily = (event) => {
+  const selectedFont = event.target.value
+  topText.style.fontFamily = selectedFont
+}
+
+fontFamilySelect.onchange = fontFamily
+
+
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
