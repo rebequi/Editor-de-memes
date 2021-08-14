@@ -22,29 +22,28 @@ const bottomTextDisplayOnImage = (event) => {
 inputTopText.oninput = topTextDisplayOnImage
 inputBottomText.oninput = bottomTextDisplayOnImage
 
-// Funciones para ocultar textos sobre imagen
-const hideTopText = () => {
-  const hideTopTextCheckboxStatus = hideTopTextCheckbox.checked
-  if (hideTopTextCheckboxStatus == true) {
-    hideTopTextContainer.style.display = "none"
-  } 
+// Funcion para ocultar textos sobre imagen
+
+hideTopTextCheckbox.onchange = () => hideText("top")
+hideBottomTextCheckbox.onchange = () => hideText("bottom")
+
+const hideText = (posicion) => {
+  if (posicion === "top") {
+    const hideTopTextCheckboxStatus = hideTopTextCheckbox.checked
+    if (hideTopTextCheckboxStatus == true) {
+      hideTopTextContainer.style.display = "none"
+    } 
+    else {
+      hideTopTextContainer.style.display = "block"
+    }
+  }
   else {
-    hideTopTextContainer.style.display = "block"
+    const hideBottomTextCheckboxStatus = hideBottomTextCheckbox.checked
+    if (hideBottomTextCheckboxStatus == true) {
+      hideBottomTextContainer.style.display = "none"
+    } 
+    else {
+      hideBottomTextContainer.style.display = "block"
+    }
   }
 }
-
-hideTopTextCheckbox.onchange = hideTopText
-
-const hideBottomText = () => {
-  const hideBottomTextCheckboxStatus = hideBottomTextCheckbox.checked
-  if (hideBottomTextCheckboxStatus == true) {
-    hideBottomTextContainer.style.display = "none"
-  } 
-  else {
-    hideBottomTextContainer.style.display = "block"
-  }
-}
-
-hideBottomTextCheckbox.onchange = hideBottomText
-
-//test x2
