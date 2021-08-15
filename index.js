@@ -129,3 +129,5 @@ inputForBlendMode.onchange = () => {
 }
 
 // Funcion para agregar filtros 
+
+
