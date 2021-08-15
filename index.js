@@ -79,14 +79,53 @@ buttonForImagePanel.onclick = showImagePanel
 buttonForTextPanel.onclick = showTextPanel
 
 ////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
+
 const inputURLofImage = document.getElementById ("input-for-url")
-const memeContainer = document.getElementById ("meme-image")
-console.log (memeContainer)
+const memeImage = document.getElementById ("meme-image")
+const inputForBlendMode = document.getElementById ("blend-input")
+const backgroundColorInput = document.getElementById("color-for-background")
+
+//// selectores para filtros !
+
+// const inputBrightness = document.getElementById ("brightness-slider")
+// const inputOpacity = document.getElementById ("opacity-slider")
+// const inputContrast = document.getElementById ("contrast-slider")
+// const inputBlur = document.getElementById ("blur-slider")
+// const inputGrayScale = document.getElementById ("grayscale-slider")
+// const inputSepia = document.getElementById ("sepia-slider")
+// const inputSaturation = document.getElementById ("saturarion-slider")
+// const inputNegative = document.getElementById ("negative-slider")
 
 // Funcion para agregar URL al input 
 
-inputURLofImage.oninput = ()=> {
-    memeContainer.src = inputURLofImage.value
+inputURLofImage.oninput = () => {
+  memeImage.style.backgroundImage = `url("${inputURLofImage.value})"`
+  
 }
 
+// Funcion para agregar modos de fondo a la imagen
 
+
+backgroundColorInput.oninput = () => {
+  memeImage.style.backgroundColor = backgroundColorInput.value
+}
+
+inputForBlendMode.onchange = () => {
+  if (inputForBlendMode.value === "lighten") {
+    memeImage.style.backgroundBlendMode = "lighten"
+  }
+  else if (inputForBlendMode.value === "dark") {
+    memeImage.style.backgroundBlendMode = "darken"
+  }
+  else if (inputForBlendMode.value === "sharpen") {
+    memeImage.style.backgroundBlendMode = "difference"
+  }
+  else if (inputForBlendMode.value === "clarity") {
+    memeImage.style.backgroundBlendMode = "luminosity"
+  }
+  else if (inputForBlendMode.value === "multiply") {
+    memeImage.style.backgroundBlendMode = "multiply"
+  }
+}
+
+// Funcion para agregar filtros 
