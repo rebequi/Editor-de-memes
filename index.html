@@ -26,10 +26,9 @@
 
             <div class="edition-buttons-container">
                 <ul class="list-button-edition">
-                    
-                    <li id="image-panel-button"><i class="fas fa-images icon-header"></i>Imagen</li>
-                    <li id="text-panel-button"><i class="fas fa-heading icon-header"></i>Texto</li>
-                    <li><i class="far fa-lightbulb icon-header"></i>Modo oscuro</li>
+                    <li class="panel-button" id="image-panel-button"><i class="fas fa-images icon-header"></i>Imagen</li>
+                    <li class="panel-button" id="text-panel-button"><i class="fas fa-heading icon-header"></i>Texto</li>
+                    <li class="panel-button"><i class="far fa-lightbulb icon-header"></i>Modo oscuro</li>
                 </ul>
             </div>
         </header>
@@ -41,7 +40,7 @@
 
             <div class="image-container">
                 <div id="top-text-container">
-                   <p id="top-text" class="textOverImage">TOP TEXT</p> 
+                   <p id="top-text" class="text-over-image">TOP TEXT</p> 
                 </div>
                 <div class="meme">
     
@@ -49,7 +48,7 @@
                 </div>
                 
                 <div id="bottom-text-container">
-                    <p id="bottom-text" class="textOverImage">BOTTOM TEXT</p> 
+                    <p id="bottom-text" class="text-over-image">BOTTOM TEXT</p> 
                  </div>
             </div>
         </section>
@@ -232,7 +231,7 @@
                 <!-- OPCIONES DE FUENTE -->
                 <div class="font-items">
                     <div class="font-size-input-container">
-                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="input-custom" id="font-size-input" min="12">
+                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="input-custom" id="font-size-input" value="44" min="12">
                     </div>
                     <div class="buttons-container">
                         <button class="button" id="text-left-align-button">
@@ -261,8 +260,8 @@
                     <div class="color-container">
                         <h3>FONDO</h3>
                         <div class="input-custom">
-                            <input type="color" id="background-color-input" name="Color de fondo">
-                            <span id="background-color" aria-hidden="true">#000000</span>
+                            <input type="color" id="background-color-input" value="#FFFFFF" name="Color de fondo">
+                            <span id="background-color" aria-hidden="true">#ffffff</span>
                         </div>
                     </div>
                 </div>
