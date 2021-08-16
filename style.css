@@ -76,13 +76,25 @@ header {
 }
 
 .image-container {
-    background-color: red;
+
     width: 610px;
     height: 610px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+.meme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mm-img {
+    background-color: blue;
+    height: 400px;
+    width: 100%;
+}
+
  /* //////////////// Final de Estilos para section*/
 
  

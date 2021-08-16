@@ -158,11 +158,122 @@ buttonForImagePanel.onclick = showImagePanel
 buttonForTextPanel.onclick = showTextPanel
 
 ////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
+
 const inputURLofImage = document.getElementById ("input-for-url")
-const memeContainer = document.getElementById ("meme-image")
-console.log (memeContainer)
+const memeImage = document.getElementById ("meme-image")
+const inputForBlendMode = document.getElementById ("blend-input")
+const backgroundColorInput = document.getElementById("color-for-background")
+
 
 // Funcion para agregar URL al input 
+
+inputURLofImage.oninput = () => {
+  memeImage.style.backgroundImage = `url("${inputURLofImage.value})"`
+  
+}
+
+// Funcion para agregar modos de fondo a la imagen
+
+
+backgroundColorInput.oninput = () => {
+  memeImage.style.backgroundColor = backgroundColorInput.value
+}
+
+inputForBlendMode.onchange = () => {
+  if (inputForBlendMode.value === "lighten") {
+    memeImage.style.backgroundBlendMode = "lighten"
+  }
+  else if (inputForBlendMode.value === "dark") {
+    memeImage.style.backgroundBlendMode = "darken"
+  }
+  else if (inputForBlendMode.value === "sharpen") {
+    memeImage.style.backgroundBlendMode = "difference"
+  }
+  else if (inputForBlendMode.value === "clarity") {
+    memeImage.style.backgroundBlendMode = "luminosity"
+  }
+  else if (inputForBlendMode.value === "multiply") {
+    memeImage.style.backgroundBlendMode = "multiply"
+  }
+}
+
+
+// // Funcion para agregar filtros a la imagen
+
+// selectores para filtros !
+
+const inputBrightness = document.getElementById ("brightness-slider")
+const inputOpacity = document.getElementById ("opacity-slider")
+const inputContrast = document.getElementById ("contrast-slider")
+const inputBlur = document.getElementById ("blur-slider")
+const inputGrayScale = document.getElementById ("grayscale-slider")
+const inputHue = document.getElementById ("hue-slider")
+const inputSepia = document.getElementById ("sepia-slider")
+const inputSaturation = document.getElementById ("saturation-slider")
+const inputNegative = document.getElementById ("negative-slider")
+
+
+console.log (inputSaturation)
+
+// LOGRAR HACER CAMBIOS EN EL INPUT !!!!!
+
+
+// const escucharCambiosdeBrillo = () => {
+//   console.log (inputBrightness.value)
+// }
+// inputBrightness.onchange = escucharCambiosdeBrillo
+
+inputBrightness.onchange = () => {
+  memeImage.style.filter = `brightness(${inputBrightness.value})`
+}
+
+inputOpacity.onchange = () => {
+  memeImage.style.filter = `opacity(${inputOpacity.value})`
+}
+
+inputContrast.onchange = () => {
+  console.log (inputContrast.value)
+  memeImage.style.filter = `contrast(${inputContrast.value}%)`
+}
+
+inputBlur.onchange = () => {
+  memeImage.style.filter = `blur(${inputBlur.value}px)`
+}
+
+inputGrayScale.onchange = () => {
+  memeImage.style.filter = `grayscale(${inputGrayScale.value})`
+}
+
+inputGrayScale.onchange = () => {
+  memeImage.style.filter = `grayscale(${inputGrayScale.value})`
+}
+
+inputSepia.onchange = () => {
+  memeImage.style.filter = `sepia(${inputSepia.value})`
+}
+
+inputHue.onchange = () => {
+  memeImage.style.filter = `hue-rotate(${inputHue.value}deg)`
+}
+
+inputSaturation.onchange = () => {
+  memeImage.style.filter = `saturate(${inputSaturation.value}%)`
+}
+
+inputNegative.onchange = () => {
+  memeImage.style.filter = `invert(${inputNegative.value})`
+}
+
+
+//  Quiero hacer una sintaxis con if
+// if (inputBrightness.value) {
+//   console.log ("hay cambios en el input de brillo")
+// }
+
+
+// Funcionalidad de Reestablecer Filtros
+
+
 
 inputURLofImage.oninput = ()=> {
     memeContainer.src = inputURLofImage.value
