@@ -1,12 +1,10 @@
-// Variables de textos
+// Textos sobre imagen
 const topText = document.getElementById("top-text")
 const inputTopText = document.getElementById("input-for-top-text")
 const bottomText = document.getElementById("bottom-text")
 const inputBottomText = document.getElementById("input-for-bottom-text")
-const fontFamilySelect = document.getElementById("font-family-select")
-const inputFontSize = document.getElementById("font-size-input")
 
-// Variables de ocultar textos sobre imagen
+// Ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
 const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
@@ -37,6 +35,7 @@ inputTopText.oninput = topTextDisplayOnImage
 inputBottomText.oninput = bottomTextDisplayOnImage
 
 // Funcion para ocultar textos sobre imagen
+
 hideTopTextCheckbox.onchange = () => hideText("top")
 hideBottomTextCheckbox.onchange = () => hideText("bottom")
 
@@ -60,7 +59,6 @@ const hideText = (posicion) => {
     }
   }
 }
-
 
 // Funcion para cambio de fonts
 const fontFamily = (event) => {
@@ -163,7 +161,6 @@ const inputURLofImage = document.getElementById ("input-for-url")
 const memeImage = document.getElementById ("meme-image")
 const inputForBlendMode = document.getElementById ("blend-input")
 const backgroundColorInput = document.getElementById("color-for-background")
-
 
 // Funcion para agregar URL al input 
 
