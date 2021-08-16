@@ -191,3 +191,8 @@ inputNegative.onchange = () => {
 //   console.log ("hay cambios en el input de brillo")
 // }
 
+
+// Funcionalidad de Reestablecer Filtros
+
+
+
