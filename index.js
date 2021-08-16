@@ -10,6 +10,18 @@ const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
 const hideBottomTextContainer = document.getElementById("bottom-text-container")
 
+// Variables de justificar textos
+const buttonAlignLeft = document.getElementById("text-left-align-button")
+const buttonAlignCenter = document.getElementById("text-center-align-button")
+const buttonAlignRight = document.getElementById("text-right-align-button")
+
+// Variables de colores
+const textColorInput = document.getElementById("text-color-input")
+const textColorCode = document.getElementById("text-color")
+const backgroundColorInput = document.getElementById("background-color-input")
+const backgroundColorCode = document.getElementById("background-color")
+const hideBackgroundColor = document.getElementById("no-background-color")
+
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
   topText.textContent = event.target.value
@@ -48,6 +60,71 @@ const hideText = (posicion) => {
   }
 }
 
+// Funcion para cambio de fonts
+const fontFamily = (event) => {
+  const selectedFont = event.target.value
+  topText.style.fontFamily = selectedFont
+  bottomText.style.fontFamily = selectedFont
+}
+
+fontFamilySelect.onchange = fontFamily
+
+// Funcion para cambio de tamaño de texto
+const fontSize = (event) => {
+  const fontSizeValue = event.target.value
+  topText.style.fontSize = fontSizeValue + "px"
+  bottomText.style.fontSize = fontSizeValue + "px"
+}
+
+inputFontSize.onchange = fontSize
+
+// Funcion de botones para justificar texto
+buttonAlignLeft.onclick = () => textAlignButtons("left")
+buttonAlignCenter.onclick = () => textAlignButtons("center")
+buttonAlignRight.onclick = () => textAlignButtons("right")
+
+const textAlignButtons = (selected) => {
+  topText.style.textAlign = selected
+  bottomText.style.textAlign = selected
+  }
+
+
+// Funcion para cambio de color en font
+const fontColor = (event) => {
+  const colorCode = textColorInput.value
+  topText.style.color = colorCode
+  bottomText.style.color = colorCode
+  textColorCode.textContent = event.target.value
+}
+
+textColorInput.oninput = fontColor
+
+// Funcion para cambio de color en fondo
+const bgColor = (event) => {
+  const bgColorCode = backgroundColorInput.value
+  topText.style.backgroundColor = bgColorCode
+  bottomText.style.backgroundColor = bgColorCode
+  backgroundColorCode.textContent = event.target.value
+}
+
+backgroundColorInput.oninput = bgColor
+
+// Funcion para fondo transparente
+const transparentBackground = () => {
+  const transparentBackgroundStatus = hideBackgroundColor.checked
+  const bgColorCode = backgroundColorInput.value
+  if (transparentBackgroundStatus == true) {
+    topText.style.backgroundColor = "transparent"
+    bottomText.style.backgroundColor = "transparent"
+  }
+  else {
+    topText.style.backgroundColor = bgColorCode
+    bottomText.style.backgroundColor = bgColorCode
+  }
+}
+
+hideBackgroundColor.oninput = transparentBackground
+
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
 const buttonForTextPanel = document.getElementById ("text-panel-button")
@@ -85,17 +162,6 @@ const memeImage = document.getElementById ("meme-image")
 const inputForBlendMode = document.getElementById ("blend-input")
 const backgroundColorInput = document.getElementById("color-for-background")
 
-//// selectores para filtros !
-
-// const inputBrightness = document.getElementById ("brightness-slider")
-// const inputOpacity = document.getElementById ("opacity-slider")
-// const inputContrast = document.getElementById ("contrast-slider")
-// const inputBlur = document.getElementById ("blur-slider")
-// const inputGrayScale = document.getElementById ("grayscale-slider")
-// const inputSepia = document.getElementById ("sepia-slider")
-// const inputSaturation = document.getElementById ("saturarion-slider")
-// const inputNegative = document.getElementById ("negative-slider")
-
 // Funcion para agregar URL al input 
 
 inputURLofImage.oninput = () => {
@@ -128,6 +194,84 @@ inputForBlendMode.onchange = () => {
   }
 }
 
-// Funcion para agregar filtros 
+
+// // Funcion para agregar filtros a la imagen
+
+// selectores para filtros !
+
+const inputBrightness = document.getElementById ("brightness-slider")
+const inputOpacity = document.getElementById ("opacity-slider")
+const inputContrast = document.getElementById ("contrast-slider")
+const inputBlur = document.getElementById ("blur-slider")
+const inputGrayScale = document.getElementById ("grayscale-slider")
+const inputHue = document.getElementById ("hue-slider")
+const inputSepia = document.getElementById ("sepia-slider")
+const inputSaturation = document.getElementById ("saturation-slider")
+const inputNegative = document.getElementById ("negative-slider")
 
 
+console.log (inputSaturation)
+
+// LOGRAR HACER CAMBIOS EN EL INPUT !!!!!
+
+
+// const escucharCambiosdeBrillo = () => {
+//   console.log (inputBrightness.value)
+// }
+// inputBrightness.onchange = escucharCambiosdeBrillo
+
+inputBrightness.onchange = () => {
+  memeImage.style.filter = `brightness(${inputBrightness.value})`
+}
+
+inputOpacity.onchange = () => {
+  memeImage.style.filter = `opacity(${inputOpacity.value})`
+}
+
+inputContrast.onchange = () => {
+  console.log (inputContrast.value)
+  memeImage.style.filter = `contrast(${inputContrast.value}%)`
+}
+
+inputBlur.onchange = () => {
+  memeImage.style.filter = `blur(${inputBlur.value}px)`
+}
+
+inputGrayScale.onchange = () => {
+  memeImage.style.filter = `grayscale(${inputGrayScale.value})`
+}
+
+inputGrayScale.onchange = () => {
+  memeImage.style.filter = `grayscale(${inputGrayScale.value})`
+}
+
+inputSepia.onchange = () => {
+  memeImage.style.filter = `sepia(${inputSepia.value})`
+}
+
+inputHue.onchange = () => {
+  memeImage.style.filter = `hue-rotate(${inputHue.value}deg)`
+}
+
+inputSaturation.onchange = () => {
+  memeImage.style.filter = `saturate(${inputSaturation.value}%)`
+}
+
+inputNegative.onchange = () => {
+  memeImage.style.filter = `invert(${inputNegative.value})`
+}
+
+
+//  Quiero hacer una sintaxis con if
+// if (inputBrightness.value) {
+//   console.log ("hay cambios en el input de brillo")
+// }
+
+
+// Funcionalidad de Reestablecer Filtros
+
+
+
+inputURLofImage.oninput = ()=> {
+    memeContainer.src = inputURLofImage.value
+}
