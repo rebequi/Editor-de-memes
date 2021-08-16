@@ -117,14 +117,10 @@ const transparentBackground = () => {
   const bgColorCode = backgroundColorInput.value
   if (transparentBackgroundStatus == true) {
     topText.style.backgroundColor = "transparent"
-  }
-  else {
-    topText.style.backgroundColor = bgColorCode
-  }
-  if (transparentBackgroundStatus == true) {
     bottomText.style.backgroundColor = "transparent"
   }
   else {
+    topText.style.backgroundColor = bgColorCode
     bottomText.style.backgroundColor = bgColorCode
   }
 }
