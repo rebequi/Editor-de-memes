@@ -19,7 +19,10 @@ const buttonAlignRight = document.getElementById("text-right-align-button")
 
 // Variables de colores
 const textColorInput = document.getElementById("text-color-input")
+const textColorCode = document.getElementById("text-color")
 const backgroundColorInput = document.getElementById("background-color-input")
+const backgroundColorCode = document.getElementById("background-color")
+const hideBackgroundColor = document.getElementById("no-background-color")
 
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
@@ -87,6 +90,42 @@ const textAlignButtons = (selected) => {
   bottomText.style.textAlign = selected
   }
 
+
+// Funcion para cambio de color en font
+const fontColor = (event) => {
+  const colorCode = textColorInput.value
+  topText.style.color = colorCode
+  bottomText.style.color = colorCode
+  textColorCode.textContent = event.target.value
+}
+
+textColorInput.oninput = fontColor
+
+// Funcion para cambio de color en fondo
+const bgColor = (event) => {
+  const bgColorCode = backgroundColorInput.value
+  topText.style.backgroundColor = bgColorCode
+  bottomText.style.backgroundColor = bgColorCode
+  backgroundColorCode.textContent = event.target.value
+}
+
+backgroundColorInput.oninput = bgColor
+
+// Funcion para fondo transparente
+const transparentBackground = () => {
+  const transparentBackgroundStatus = hideBackgroundColor.checked
+  const bgColorCode = backgroundColorInput.value
+  if (transparentBackgroundStatus == true) {
+    topText.style.backgroundColor = "transparent"
+    bottomText.style.backgroundColor = "transparent"
+  }
+  else {
+    topText.style.backgroundColor = bgColorCode
+    bottomText.style.backgroundColor = bgColorCode
+  }
+}
+
+hideBackgroundColor.oninput = transparentBackground
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
