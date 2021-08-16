@@ -3,6 +3,8 @@ const topText = document.getElementById("top-text")
 const inputTopText = document.getElementById("input-for-top-text")
 const bottomText = document.getElementById("bottom-text")
 const inputBottomText = document.getElementById("input-for-bottom-text")
+const fontFamilySelect = document.getElementById("font-family-select")
+const inputFontSize = document.getElementById("font-size-input")
 
 // Ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
@@ -18,9 +20,10 @@ const buttonAlignRight = document.getElementById("text-right-align-button")
 // Variables de colores
 const textColorInput = document.getElementById("text-color-input")
 const textColorCode = document.getElementById("text-color")
-const backgroundColorInput = document.getElementById("background-color-input")
+const backgroundColorInputText = document.getElementById("background-color-input")
 const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
+
 
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
@@ -101,18 +104,18 @@ textColorInput.oninput = fontColor
 
 // Funcion para cambio de color en fondo
 const bgColor = (event) => {
-  const bgColorCode = backgroundColorInput.value
+  const bgColorCode = backgroundColorInputText.value
   topText.style.backgroundColor = bgColorCode
   bottomText.style.backgroundColor = bgColorCode
   backgroundColorCode.textContent = event.target.value
 }
 
-backgroundColorInput.oninput = bgColor
+backgroundColorInputText.oninput = bgColor
 
 // Funcion para fondo transparente
 const transparentBackground = () => {
   const transparentBackgroundStatus = hideBackgroundColor.checked
-  const bgColorCode = backgroundColorInput.value
+  const bgColorCode = backgroundColorInputText.value
   if (transparentBackgroundStatus == true) {
     topText.style.backgroundColor = "transparent"
     bottomText.style.backgroundColor = "transparent"
@@ -166,7 +169,6 @@ const backgroundColorInput = document.getElementById("color-for-background")
 
 inputURLofImage.oninput = () => {
   memeImage.style.backgroundImage = `url("${inputURLofImage.value})"`
-  
 }
 
 // Funcion para agregar modos de fondo a la imagen
@@ -259,19 +261,4 @@ inputSaturation.onchange = () => {
 
 inputNegative.onchange = () => {
   memeImage.style.filter = `invert(${inputNegative.value})`
-}
-
-
-//  Quiero hacer una sintaxis con if
-// if (inputBrightness.value) {
-//   console.log ("hay cambios en el input de brillo")
-// }
-
-
-// Funcionalidad de Reestablecer Filtros
-
-
-
-inputURLofImage.oninput = ()=> {
-    memeContainer.src = inputURLofImage.value
 }
