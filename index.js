@@ -275,7 +275,15 @@ const removeFilters = () => {
       inputForBlurIsOn || inputForGrayScaleIsOn || inputForSepiaIsOn || inputForHueIsOn ||
       inputForSaturationIsOn || inputForNegativeIsOn ) {
     memeImage.style.filter = "none"
-
+    inputBrightness.value = "1"
+    inputOpacity.value = "1"
+    inputContrast.value = "0"
+    inputBlur.value = "0"
+    inputGrayScale.value = "0"
+    inputSepia.value = "0"
+    inputHue.value = "0"
+    inputSaturation.value = "1"
+    inputNegative.value = "1"
   }
       
   }
