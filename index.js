@@ -290,3 +290,18 @@ const removeFilters = () => {
   
 removeFiltersButton.onclick = removeFilters
 
+// Funcion boton para descargar la imagen
+
+const memeContainer = document.querySelector(".image-container")
+const downloadButton = document.getElementById ("container-for-button")
+
+downloadButton.onclick = () => {
+  domtoimage.toBlob(memeContainer)
+  .then(function (blob) {
+      window.saveAs(blob, 'meme.png');
+  });
+
+}
+
+
+
