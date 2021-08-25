@@ -16,6 +16,9 @@ const hideBottomTextContainer = document.getElementById("bottom-text-container")
 const buttonAlignLeft = document.getElementById("text-left-align-button")
 const buttonAlignCenter = document.getElementById("text-center-align-button")
 const buttonAlignRight = document.getElementById("text-right-align-button")
+const buttonOutlineNone = document.getElementById("outline-none-button")
+const buttonOutlineLight = document.getElementById("outline-light-button")
+const buttonOutlineDark = document.getElementById("outline-dark-button")
 
 // Variables de colores
 const textColorInput = document.getElementById("text-color-input")
@@ -89,7 +92,7 @@ buttonAlignRight.onclick = () => textAlignButtons("right")
 const textAlignButtons = (selected) => {
   topText.style.textAlign = selected
   bottomText.style.textAlign = selected
-  }
+}
 
 
 // Funcion para cambio de color en font
@@ -127,6 +130,24 @@ const transparentBackground = () => {
 }
 
 hideBackgroundColor.oninput = transparentBackground
+
+
+// Funcion para contorno de copy
+buttonOutlineNone.onclick = () => outlineBorder("none")
+buttonOutlineLight.onclick = () => outlineBorder("light")
+buttonOutlineDark.onclick = () => outlineBorder("dark")
+
+const outlineBorder = (mode) => {
+  if (mode === "none") {
+    topText.style.textShadow = "none"
+  }
+  if (mode === "light") {
+    topText.style.textShadow = "-2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF"
+  }
+  if (mode === "dark") {
+    topText.style.textShadow = "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000"
+  }
+}
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
@@ -302,6 +323,3 @@ downloadButton.onclick = () => {
   });
 
 }
-
-
-
