@@ -28,7 +28,6 @@ const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
 
 
-
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
   topText.textContent = event.target.value
@@ -204,6 +203,9 @@ inputForBlendMode.onchange = () => {
   if (inputForBlendMode.value === "lighten") {
     memeImage.style.backgroundBlendMode = "lighten"
   }
+  else if (inputForBlendMode.value === "none") {
+    memeImage.style.backgroundBlendMode = "normal"
+  }
   else if (inputForBlendMode.value === "dark") {
     memeImage.style.backgroundBlendMode = "darken"
   }
@@ -221,7 +223,7 @@ inputForBlendMode.onchange = () => {
 
 // // Funcion para agregar filtros a la imagen
 
-// selectores para filtros !
+// >>>>>>  Selectores para filtros 
 
 const inputBrightness = document.getElementById ("brightness-slider")
 const inputOpacity = document.getElementById ("opacity-slider")
@@ -233,16 +235,6 @@ const inputSepia = document.getElementById ("sepia-slider")
 const inputSaturation = document.getElementById ("saturation-slider")
 const inputNegative = document.getElementById ("negative-slider")
 
-
-console.log (inputSaturation)
-
-// LOGRAR HACER CAMBIOS EN EL INPUT !!!!!
-
-
-// const escucharCambiosdeBrillo = () => {
-//   console.log (inputBrightness.value)
-// }
-// inputBrightness.onchange = escucharCambiosdeBrillo
 
 inputBrightness.onchange = () => {
   memeImage.style.filter = `brightness(${inputBrightness.value})`
@@ -283,4 +275,51 @@ inputSaturation.onchange = () => {
 
 inputNegative.onchange = () => {
   memeImage.style.filter = `invert(${inputNegative.value})`
+}
+
+// Funcion boton para reestablecer los filtros 
+
+const removeFiltersButton = document.getElementById("go-back-button")
+
+const removeFilters = () => {
+  const inputForBrightnessIsOn = inputBrightness.onchange
+  const inputForOpacityIsOn = inputOpacity.onchange
+  const inputForContrastIsOn = inputContrast.onchange
+  const inputForBlurIsOn = inputBlur.onchange
+  const inputForGrayScaleIsOn = inputGrayScale.onchange
+  const inputForSepiaIsOn = inputSepia.onchange
+  const inputForHueIsOn = inputHue.onchange
+  const inputForSaturationIsOn = inputSaturation.onchange
+  const inputForNegativeIsOn = inputNegative.onchange
+
+    if (inputForBrightnessIsOn || inputForOpacityIsOn ||inputForContrastIsOn ||
+      inputForBlurIsOn || inputForGrayScaleIsOn || inputForSepiaIsOn || inputForHueIsOn ||
+      inputForSaturationIsOn || inputForNegativeIsOn ) {
+    memeImage.style.filter = "none"
+    inputBrightness.value = "1"
+    inputOpacity.value = "1"
+    inputContrast.value = "0"
+    inputBlur.value = "0"
+    inputGrayScale.value = "0"
+    inputSepia.value = "0"
+    inputHue.value = "0"
+    inputSaturation.value = "1"
+    inputNegative.value = "1"
+  }
+      
+  }
+  
+removeFiltersButton.onclick = removeFilters
+
+// Funcion boton para descargar la imagen
+
+const memeContainer = document.querySelector(".image-container")
+const downloadButton = document.getElementById ("container-for-button")
+
+downloadButton.onclick = () => {
+  domtoimage.toBlob(memeContainer)
+  .then(function (blob) {
+      window.saveAs(blob, 'meme.png');
+  });
+
 }
