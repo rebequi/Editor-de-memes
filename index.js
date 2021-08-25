@@ -5,13 +5,14 @@ const bottomText = document.getElementById("bottom-text")
 const inputBottomText = document.getElementById("input-for-bottom-text")
 const fontFamilySelect = document.getElementById("font-family-select")
 const inputFontSize = document.getElementById("font-size-input")
+const inputSpacing = document.getElementById("spacing")
+const selectLineHeight = document.getElementById("line-height")
 
 // Ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
 const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
 const hideBottomTextContainer = document.getElementById("bottom-text-container")
-const inputSpacing = document.getElementById("spacing")
 
 // Variables de justificar textos
 const buttonAlignLeft = document.getElementById("text-left-align-button")
@@ -161,6 +162,16 @@ const inputSpacingValue = (space) => {
 }
 
 inputSpacing.onchange = inputSpacingValue
+
+// Funcion de espaciado
+const lineHeight = (space) => {
+  const lineHeightValue = selectLineHeight.value
+  topText.style.lineHeight = lineHeightValue
+  bottomText.style.lineHeight = lineHeightValue
+}
+
+selectLineHeight.onchange = lineHeight
+
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
