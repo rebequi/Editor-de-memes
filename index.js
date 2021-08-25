@@ -213,11 +213,10 @@ const backgroundColorInput = document.getElementById("color-for-background")
 // Funcion para agregar URL al input 
 
 inputURLofImage.oninput = () => {
-  memeImage.style.backgroundImage = `url("${inputURLofImage.value})"`
+  memeImage.style.backgroundImage = `url("${inputURLofImage.value}")`
 }
 
 // Funcion para agregar modos de fondo a la imagen
-
 
 backgroundColorInput.oninput = () => {
   memeImage.style.backgroundColor = backgroundColorInput.value
