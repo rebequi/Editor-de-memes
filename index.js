@@ -11,6 +11,7 @@ const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
 const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
 const hideBottomTextContainer = document.getElementById("bottom-text-container")
+const inputSpacing = document.getElementById("spacing")
 
 // Variables de justificar textos
 const buttonAlignLeft = document.getElementById("text-left-align-button")
@@ -140,14 +141,26 @@ buttonOutlineDark.onclick = () => outlineBorder("dark")
 const outlineBorder = (mode) => {
   if (mode === "none") {
     topText.style.textShadow = "none"
+    bottomText.style.textShadow = "none"
   }
   if (mode === "light") {
     topText.style.textShadow = "-2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF"
+    bottomText.style.textShadow = "-2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF"
   }
   if (mode === "dark") {
     topText.style.textShadow = "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000"
+    bottomText.style.textShadow = "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000"
   }
 }
+
+// Funcion para espaciado de texto
+const inputSpacingValue = (space) => {
+  const backgroundSizeValue = space.target.value
+  topText.style.padding = backgroundSizeValue + "px"
+  bottomText.style.padding = backgroundSizeValue + "px"
+}
+
+inputSpacing.onchange = inputSpacingValue
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
