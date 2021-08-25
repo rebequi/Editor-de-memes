@@ -5,6 +5,8 @@ const bottomText = document.getElementById("bottom-text")
 const inputBottomText = document.getElementById("input-for-bottom-text")
 const fontFamilySelect = document.getElementById("font-family-select")
 const inputFontSize = document.getElementById("font-size-input")
+const inputSpacing = document.getElementById("spacing")
+const selectLineHeight = document.getElementById("line-height")
 
 // Ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
@@ -140,14 +142,36 @@ buttonOutlineDark.onclick = () => outlineBorder("dark")
 const outlineBorder = (mode) => {
   if (mode === "none") {
     topText.style.textShadow = "none"
+    bottomText.style.textShadow = "none"
   }
   if (mode === "light") {
     topText.style.textShadow = "-2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF"
+    bottomText.style.textShadow = "-2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF"
   }
   if (mode === "dark") {
     topText.style.textShadow = "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000"
+    bottomText.style.textShadow = "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000"
   }
 }
+
+// Funcion para espaciado de texto
+const inputSpacingValue = (space) => {
+  const backgroundSizeValue = space.target.value
+  topText.style.padding = backgroundSizeValue + "px"
+  bottomText.style.padding = backgroundSizeValue + "px"
+}
+
+inputSpacing.onchange = inputSpacingValue
+
+// Funcion de espaciado
+const lineHeight = (space) => {
+  const lineHeightValue = selectLineHeight.value
+  topText.style.lineHeight = lineHeightValue
+  bottomText.style.lineHeight = lineHeightValue
+}
+
+selectLineHeight.onchange = lineHeight
+
 
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
 
