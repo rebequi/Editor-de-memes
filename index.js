@@ -214,6 +214,7 @@ const backgroundColorInput = document.getElementById("color-for-background")
 
 inputURLofImage.oninput = () => {
   memeImage.style.backgroundImage = `url("${inputURLofImage.value}")`
+  memeImage.style.backgroundSize = "cover"
 }
 
 // Funcion para agregar modos de fondo a la imagen
