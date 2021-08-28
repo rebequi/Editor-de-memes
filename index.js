@@ -11,6 +11,7 @@ const inputForBlendMode = document.getElementById ("blend-input")
 const backgroundColorInput = document.getElementById("color-for-background")
 const backgroundColorImageInput = document.getElementById("text-color-image-panel")
 const panelButtonDarkMode = document.getElementById("dark-mode")
+const panelButtonLightMode = document.getElementById("light-mode")
 
 // Textos sobre imagen
 const topText = document.getElementById("top-text")
@@ -45,9 +46,19 @@ const hideBackgroundColor = document.getElementById("no-background-color")
 
 // Funciones para dark/light modes
 panelButtonDarkMode.onclick = () => {
-  panelButtonDarkMode.textContent = "Modo claro"
-  panelButtonDarkMode.classList.add = "far fa-lightbulb icon-header"
+  if (panelButtonLightMode.style.display = "block") {
+    panelButtonDarkMode.style.display = "none"
+    // console.log("oscuro")
+  }
 }
+
+panelButtonLightMode.onclick = () => {
+  if (panelButtonDarkMode.style.display = "block") {
+    panelButtonLightMode.style.display = "none"
+  }
+  // console.log("claro")
+}
+
 
 
 // Funciones para textos sobre imagen
