@@ -12,6 +12,10 @@ const backgroundColorInput = document.getElementById("color-for-background")
 const backgroundColorImageInput = document.getElementById("text-color-image-panel")
 const panelButtonDarkMode = document.getElementById("dark-mode")
 const panelButtonLightMode = document.getElementById("light-mode")
+const darkModeThemeClass = document.querySelector(".dark-mode-theme")
+const lightModeThemeClass = document.querySelector(".light-mode-theme")
+
+// const inputCustomClass = document.querySelector(".input-custom")
 
 // Textos sobre imagen
 const topText = document.getElementById("top-text")
@@ -44,14 +48,22 @@ const backgroundColorInputText = document.getElementById("background-color-input
 const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
 
+console.log(darkModeThemeClass)
+
+// Funcion boton para modo claro-oscuro
+
+const header = document.getElementById ("header")
+const section = document.getElementById ("meme-section")
+const asideSection = document.getElementById ("aside")
+// const allTextInputs = document.querySelectorAll("input[type=text]")
+
 // Funciones para dark/light modes
 panelButtonLightMode.onclick = () => {
   if (panelButtonDarkMode.style.display = "block") {
     panelButtonLightMode.style.display = "none"
-    header.classList.toggle ("light-mode-header")
-    section.classList.toggle ("light-mode-section")
-    asideSection.classList.toggle("light-mode-aside")
-    section.style.backgroundColor= "#eee2f3"
+    document.body.classList.add("light-mode-theme")
+    document.body.classList.remove("dark-mode-theme")
+    
   }
   console.log("claro")
 }
@@ -59,16 +71,11 @@ panelButtonLightMode.onclick = () => {
 panelButtonDarkMode.onclick = () => {
   if (panelButtonLightMode.style.display = "block") {
     panelButtonDarkMode.style.display = "none"
-    header.classList.toggle ("light-mode-header")
-    section.classList.toggle ("light-mode-section")
-    asideSection.classList.toggle("light-mode-aside")
-    section.style.backgroundColor= "#eee2f3"
-
-    console.log("oscuro")
+    document.body.classList.add("dark-mode-theme")
+    document.body.classList.remove("light-mode-theme")
   }
+  console.log("oscuro")
 }
-
-
 
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
@@ -386,17 +393,3 @@ downloadButton.onclick = () => {
   });
 
 }
-
-// Funcion boton para modo claro-oscuro
-
-const header = document.getElementById ("header")
-const section = document.getElementById ("meme-section")
-const asideSection = document.getElementById ("aside")
-const allTextInputs = document.querySelectorAll("input[type=text]")
-console.log (allTextInputs)
-
-// panelButtonDarkMode.onclick = () => {
-
-// // allTextInputs.classList.toggle ("light-mode-inputs")
-
-// }

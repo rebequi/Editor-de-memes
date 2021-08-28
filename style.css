@@ -11,53 +11,187 @@
 }
 body {
     display: flex;
-    color: #fafafa;
     overflow: hidden;
     font-size: 13px;
     font-family: 'Varela Round', sans-serif;
 }
 
-/* Modo Claro */
+/* Modo oscuro */
 
-
-.light-mode-header{
-    background-color: #e5d4ed;
-    color: #1d1128;
-}
-
-.light-mode-section{
-    background-color: #f6f1f9;
-    color: #1d1128;
-}
-
-.light-mode-aside {
-    background-color: #dcc5e7;
-    color: #1d1128;
-}
-
-.light-mode-inputs{
-    background-color: #ba8ccf;
-}
-
-
-main {
-    flex-grow: 10;
-    background-color:#1D1128;
-    height: 100vh;
-}
-
-/* Modo claro */
 #dark-mode {
     display: none;
 }
 
+.dark-mode-theme {
+    color: #fafafa;
+}
 
-/* //////////////// Inicio estilos para el Header */
-header {
-    background-color: #140C1D;
+.dark-mode-theme main {
+    flex-grow: 10;
+    background-color: #1F122B;
+    height: 100vh;
+}
+
+.dark-mode-theme header {
+    background-color: #341E48;
     height: 100px;
     padding: 10px;
 }
+
+.dark-mode-theme .meme-container {
+    background-color: #1F122B;
+    height: 610px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dark-mode-theme aside {
+    background-color: #482A65;
+    width: 240px;
+    height: 100vh;
+    padding: 20px;
+    overflow:scroll;
+    
+}
+
+.dark-mode-theme .input-custom {
+    border: none;
+    background-color: #341E48;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;   
+    padding: 10px 5px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-theme .panel-button:hover {
+    background-color: #593977;
+    cursor: pointer;
+}
+
+.dark-mode-theme input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #341E48;
+}
+.dark-mode-theme input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 18px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.dark-mode-theme .button {
+    background-color: #341E48;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Varela Round', sans-serif;
+    color: #fafafa;
+}
+
+.dark-mode-theme .button-active {
+    background-color: #6D72C3;
+}
+
+/* Modo claro */
+.light-mode-theme {
+    color: #1D1128;
+}
+
+.light-mode-theme main {
+    flex-grow: 10;
+    background-color: #f6f1f9;
+    height: 100vh;
+}
+
+.light-mode-theme header {
+    background-color: #e5d4ed;
+    height: 100px;
+    padding: 10px;
+}
+
+.light-mode-theme .meme-container {
+    background-color: #f6f1f9;
+    height: 610px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.light-mode-theme aside {
+    background-color: #dcc5e7;
+    width: 240px;
+    height: 100vh;
+    padding: 20px;
+    overflow:scroll;
+    
+}
+
+.light-mode-theme .input-custom {
+    border: none;
+    background-color: #ba8ccf;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;   
+    padding: 10px 5px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+.light-mode-theme .panel-button:hover {
+    background-color: #ba8ccf;
+    cursor: pointer;
+}
+
+.light-mode-theme input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #ba8ccf;
+}
+.light-mode-theme input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 18px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.light-mode-theme .button {
+    background-color: #ba8ccf;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Varela Round', sans-serif;
+    color: #fafafa;
+}
+
+.light-mode-theme .button-active {
+    background-color: #ba8ccf;
+}
+
+/* //////////////// Inicio estilos para el Header */
+
+
  h1 {
      text-align: center;
      margin-top: 5px;
@@ -86,23 +220,10 @@ header {
     border-radius: 5px;
 }
 
-.panel-button:hover {
-    background-color: #6D72C3;
-    cursor: pointer;
-}
-
  /* //////////////// Final de Estilos para el header */
 
 
  /* //////////////// Inicio de Estilos para section*/
-
-.meme-container {
-    background-color: #1D1128;
-    height: 610px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
 #container-for-button {
     display: flex;
@@ -147,14 +268,6 @@ header {
 
  
   /* //////////////// Inicio de estilos para Aside*/
-aside {
-    background-color: #28183A;
-    width: 240px;
-    height: 100vh;
-    padding: 20px;
-    overflow:scroll;
-    
-}
 
 h2 {
     text-align: center;
@@ -164,25 +277,6 @@ h3 {
     font-size: 15px;
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-.input-custom {
-    border: none;
-    background-color: #6D72C3;
-    width: 100%;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;   
-    padding: 10px 5px;
-    border-radius: 5px;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-}
-
-.input-custom-for-background {
-    border: solid 2px #FF4C29;
-    background-color: #FF4C29;
 }
 
 .input-custom:focus {
@@ -201,32 +295,6 @@ h3 {
     margin-top: 15px; 
 }
 
-input[type="range"] {
-    appearance: none;
-    width: 100%;
-    height: 5px;
-    border-radius: 10px;
-    background-color: #6D72C3;
-}
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000;
-  border: 1px solid #000000;
-  height: 15px;
-  width: 15px;
-  border-radius: 18px;
-  background: #FFFFFF;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-
-.button {
-    background-color: #6D72C3;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-family: 'Varela Round', sans-serif;
-    color: #fafafa;
-}
 
 #go-back-button {
     margin-top: 40px;
@@ -311,10 +379,3 @@ textarea {
 .button:hover {
     cursor: pointer;
 }
-
-.button-active {
-    background-color: #6D72C3;
-}
-
-
-

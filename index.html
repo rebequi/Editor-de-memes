@@ -13,7 +13,7 @@
    
 </head>
 
-<body>
+<body class="dark-mode-theme">
 
     <main>
         <!-- ---------------------------------   HEADER   --------------------- -->
@@ -79,17 +79,21 @@
                 <h3>FONDO</h3>
 
                 <div class="color-items">
-                    <div class="color-container input-custom">
-                        <input type="color" id="color-for-background"><span id="text-color-image-panel" aria-hidden="true">#000000</span>
+                    <div class="color-container">
+                        <div class="input-custom">
+                            <input type="color" id="color-for-background"><span id="text-color-image-panel" aria-hidden="true">#000000</span>
+                            </div>
                     </div>
-                    <select id="blend-input" class="color-container input-custom">
-                        <option value="none">Ninguno</option>
-                        <option value="lighten">Aclarar</option>
-                        <option value="dark">Oscurecer</option>
-                        <option value="sharpen">Diferencia</option>
-                        <option value="clarity">Luminosidad</option>
-                        <option value="multiply">Multiplicar</option>
-                    </select>
+                    <div class="color-container">
+                        <select id="blend-input" class="color-container input-custom">
+                            <option value="none">Ninguno</option>
+                            <option value="lighten">Aclarar</option>
+                            <option value="dark">Oscurecer</option>
+                            <option value="sharpen">Diferencia</option>
+                            <option value="clarity">Luminosidad</option>
+                            <option value="multiply">Multiplicar</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="inputs-for-filters">
