@@ -43,10 +43,11 @@ const backgroundColorInputText = document.getElementById("background-color-input
 const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
 
-// Funciones para seleccionar panel - estado active
-// buttonForImagePanel.onclick = () => {
-//   alert("hola")
-// }
+// Funciones para dark/light modes
+panelButtonDarkMode.onclick = () => {
+  panelButtonDarkMode.textContent = "Modo claro"
+  panelButtonDarkMode.classList.add = "far fa-lightbulb icon-header"
+}
 
 
 // Funciones para textos sobre imagen
@@ -144,10 +145,15 @@ const transparentBackground = () => {
   if (transparentBackgroundStatus == true) {
     topText.style.backgroundColor = "transparent"
     bottomText.style.backgroundColor = "transparent"
+    memeContainer.style.backgroundImage = `url("${inputURLofImage.value}")`
+    memeContainer.style.backgroundSize = "cover"
+    memeImage.style.backgroundImage = "none"
   }
   else {
     topText.style.backgroundColor = bgColorCode
     bottomText.style.backgroundColor = bgColorCode
+    memeImage.style.backgroundImage = `url("${inputURLofImage.value}")`
+    memeImage.style.backgroundSize = "cover"
   }
 }
 
@@ -224,21 +230,17 @@ buttonForTextPanel.onclick = showTextPanel
 
 
 // Funcion para agregar URL al input 
-
 inputURLofImage.oninput = () => {
   memeImage.style.backgroundImage = `url("${inputURLofImage.value}")`
   memeImage.style.backgroundSize = "cover"
 }
 
 // Funcion para agregar modos de fondo a la imagen
-
 backgroundColorInput.oninput = () => {
   const backgroundColorInputValue = backgroundColorInput.value
   memeImage.style.backgroundColor = backgroundColorInputValue
   backgroundColorImageInput.textContent = backgroundColorInputValue
 }
-
-
 
 inputForBlendMode.onchange = () => {
   if (inputForBlendMode.value === "lighten") {
