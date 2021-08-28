@@ -30,6 +30,7 @@ const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
 
 
+
 // Funciones para textos sobre imagen
 const topTextDisplayOnImage = (event) => {
   topText.textContent = event.target.value

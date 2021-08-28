@@ -151,6 +151,11 @@ h3 {
     align-items: center;
 }
 
+.input-custom-for-background {
+    border: solid 2px #FF4C29;
+    background-color: #FF4C29;
+}
+
 .input-custom:focus {
     outline: none;
 }
