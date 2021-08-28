@@ -58,7 +58,7 @@ header {
 }
 
 .panel-button:hover {
-    background-color: #4f5872;
+    background-color: #6D72C3;
     cursor: pointer;
 }
 
@@ -278,5 +278,5 @@ textarea {
 }
 
 .button-active {
-    background-color: #4f5872;
+    background-color: #6D72C3;
 }
