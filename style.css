@@ -249,7 +249,7 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 50%;
 }
 
-#text-color, #background-color {
+#text-color, #background-color, #text-color-image-panel {
     padding-left: 10px;
 }
 

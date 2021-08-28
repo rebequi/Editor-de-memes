@@ -9,6 +9,7 @@ const inputURLofImage = document.getElementById ("input-for-url")
 const memeImage = document.getElementById ("meme-image")
 const inputForBlendMode = document.getElementById ("blend-input")
 const backgroundColorInput = document.getElementById("color-for-background")
+const backgroundColorImageInput = document.getElementById("text-color-image-panel")
 const panelButtonDarkMode = document.getElementById("dark-mode")
 
 // Textos sobre imagen
@@ -135,6 +136,7 @@ const bgColor = (event) => {
 
 backgroundColorInputText.oninput = bgColor
 
+
 // Funcion para fondo transparente
 const transparentBackground = () => {
   const transparentBackgroundStatus = hideBackgroundColor.checked
@@ -230,8 +232,12 @@ inputURLofImage.oninput = () => {
 // Funcion para agregar modos de fondo a la imagen
 
 backgroundColorInput.oninput = () => {
-  memeImage.style.backgroundColor = backgroundColorInput.value
+  const backgroundColorInputValue = backgroundColorInput.value
+  memeImage.style.backgroundColor = backgroundColorInputValue
+  backgroundColorImageInput.textContent = backgroundColorInputValue
 }
+
+
 
 inputForBlendMode.onchange = () => {
   if (inputForBlendMode.value === "lighten") {
