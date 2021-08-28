@@ -17,6 +17,29 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
+/* Modo Claro */
+
+
+.light-mode-header{
+    background-color: #e5d4ed;
+    color: #1d1128;
+}
+
+.light-mode-section{
+    background-color: #f6f1f9;
+    color: #1d1128;
+}
+
+.light-mode-aside {
+    background-color: #dcc5e7;
+    color: #1d1128;
+}
+
+.light-mode-inputs{
+    background-color: #ba8ccf;
+}
+
+
 main {
     flex-grow: 10;
     background-color:#1D1128;
@@ -24,7 +47,7 @@ main {
 }
 
 /* Modo claro */
-#light-mode {
+#dark-mode {
     display: none;
 }
 
@@ -292,3 +315,6 @@ textarea {
 .button-active {
     background-color: #6D72C3;
 }
+
+
+

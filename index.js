@@ -45,20 +45,28 @@ const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
 
 // Funciones para dark/light modes
-panelButtonDarkMode.onclick = () => {
-  if (panelButtonLightMode.style.display = "block") {
-    panelButtonDarkMode.style.display = "none"
-    // console.log("oscuro")
-  }
-}
-
 panelButtonLightMode.onclick = () => {
   if (panelButtonDarkMode.style.display = "block") {
     panelButtonLightMode.style.display = "none"
+    header.classList.toggle ("light-mode-header")
+    section.classList.toggle ("light-mode-section")
+    asideSection.classList.toggle("light-mode-aside")
+    section.style.backgroundColor= "#eee2f3"
   }
-  // console.log("claro")
+  console.log("claro")
 }
 
+panelButtonDarkMode.onclick = () => {
+  if (panelButtonLightMode.style.display = "block") {
+    panelButtonDarkMode.style.display = "none"
+    header.classList.toggle ("light-mode-header")
+    section.classList.toggle ("light-mode-section")
+    asideSection.classList.toggle("light-mode-aside")
+    section.style.backgroundColor= "#eee2f3"
+
+    console.log("oscuro")
+  }
+}
 
 
 
@@ -378,3 +386,17 @@ downloadButton.onclick = () => {
   });
 
 }
+
+// Funcion boton para modo claro-oscuro
+
+const header = document.getElementById ("header")
+const section = document.getElementById ("meme-section")
+const asideSection = document.getElementById ("aside")
+const allTextInputs = document.querySelectorAll("input[type=text]")
+console.log (allTextInputs)
+
+// panelButtonDarkMode.onclick = () => {
+
+// // allTextInputs.classList.toggle ("light-mode-inputs")
+
+// }
