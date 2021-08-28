@@ -1,3 +1,16 @@
+// ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
+const buttonForTextPanel = document.getElementById ("text-panel-button")
+const buttonForImagePanel = document.getElementById ("image-panel-button")
+const imagePanel = document.getElementById("panel-for-image")
+const textPanel = document.getElementById("panel-for-text")
+
+////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
+const inputURLofImage = document.getElementById ("input-for-url")
+const memeImage = document.getElementById ("meme-image")
+const inputForBlendMode = document.getElementById ("blend-input")
+const backgroundColorInput = document.getElementById("color-for-background")
+const panelButtonDarkMode = document.getElementById("dark-mode")
+
 // Textos sobre imagen
 const topText = document.getElementById("top-text")
 const inputTopText = document.getElementById("input-for-top-text")
@@ -28,6 +41,11 @@ const textColorCode = document.getElementById("text-color")
 const backgroundColorInputText = document.getElementById("background-color-input")
 const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
+
+// Funciones para seleccionar panel - estado active
+// buttonForImagePanel.onclick = () => {
+//   alert("hola")
+// }
 
 
 // Funciones para textos sobre imagen
@@ -173,13 +191,6 @@ const lineHeight = (space) => {
 selectLineHeight.onchange = lineHeight
 
 
-// ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
-
-const buttonForTextPanel = document.getElementById ("text-panel-button")
-const buttonForImagePanel = document.getElementById ("image-panel-button")
-const imagePanel= document.getElementById("panel-for-image")
-const textPanel= document.getElementById("panel-for-text")
-
 // Funcion para abrir el panel de Imagen
 
 const showImagePanel = () => {
@@ -187,8 +198,12 @@ const showImagePanel = () => {
     if (textPanelIsOn) {
         imagePanel.style.display = "block"
         textPanel.style.display = "none"
+        buttonForImagePanel.classList.add("button-active")
+        buttonForTextPanel.classList.remove("button-active")
     }
 }
+
+buttonForImagePanel.onclick = showImagePanel
 
 // Funcion para abrir el panel de Texto
 
@@ -197,18 +212,14 @@ const showTextPanel = () => {
     if (ImagePanelIsOn) {
         textPanel.style.display = "block"
         imagePanel.style.display = "none"
+        buttonForTextPanel.classList.add("button-active")
+        buttonForImagePanel.classList.remove("button-active")
     }
+
 }
 
-buttonForImagePanel.onclick = showImagePanel
 buttonForTextPanel.onclick = showTextPanel
 
-////////////////// >>>>>> SELECTORES PARA PANEL DE IMAGEN
-
-const inputURLofImage = document.getElementById ("input-for-url")
-const memeImage = document.getElementById ("meme-image")
-const inputForBlendMode = document.getElementById ("blend-input")
-const backgroundColorInput = document.getElementById("color-for-background")
 
 // Funcion para agregar URL al input 
 

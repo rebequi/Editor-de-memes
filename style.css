@@ -276,3 +276,7 @@ textarea {
 .button:hover {
     cursor: pointer;
 }
+
+.button-active {
+    background-color: #4f5872;
+}
