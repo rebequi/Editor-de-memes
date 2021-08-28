@@ -23,6 +23,12 @@ main {
     height: 100vh;
 }
 
+/* Modo claro */
+#light-mode {
+    display: none;
+}
+
+
 /* //////////////// Inicio estilos para el Header */
 header {
     background-color: #140C1D;
