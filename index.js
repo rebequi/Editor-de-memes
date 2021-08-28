@@ -175,6 +175,9 @@ const transparentBackground = () => {
     memeContainer.style.backgroundImage = `url("${inputURLofImage.value}")`
     memeContainer.style.backgroundSize = "cover"
     memeImage.style.backgroundImage = "none"
+    applyingBlendModes()
+
+
   }
   else {
     topText.style.backgroundColor = bgColorCode
@@ -269,26 +272,30 @@ backgroundColorInput.oninput = () => {
   backgroundColorImageInput.textContent = backgroundColorInputValue
 }
 
-inputForBlendMode.onchange = () => {
-  if (inputForBlendMode.value === "lighten") {
-    memeImage.style.backgroundBlendMode = "lighten"
-  }
-  else if (inputForBlendMode.value === "none") {
-    memeImage.style.backgroundBlendMode = "normal"
-  }
-  else if (inputForBlendMode.value === "dark") {
-    memeImage.style.backgroundBlendMode = "darken"
-  }
-  else if (inputForBlendMode.value === "sharpen") {
-    memeImage.style.backgroundBlendMode = "difference"
-  }
-  else if (inputForBlendMode.value === "clarity") {
-    memeImage.style.backgroundBlendMode = "luminosity"
-  }
-  else if (inputForBlendMode.value === "multiply") {
-    memeImage.style.backgroundBlendMode = "multiply"
-  }
+const applyingBlendModes = () => {
+
+    if (inputForBlendMode.value === "lighten") {
+      memeImage.style.backgroundBlendMode = "lighten"
+    }
+    else if (inputForBlendMode.value === "none") {
+      memeImage.style.backgroundBlendMode = "normal"
+    }
+    else if (inputForBlendMode.value === "dark") {
+      memeImage.style.backgroundBlendMode = "darken"
+    }
+    else if (inputForBlendMode.value === "sharpen") {
+      memeImage.style.backgroundBlendMode = "difference"
+    }
+    else if (inputForBlendMode.value === "clarity") {
+      memeImage.style.backgroundBlendMode = "luminosity"
+    }
+    else if (inputForBlendMode.value === "multiply") {
+      memeImage.style.backgroundBlendMode = "multiply"
+    }
+  
 }
+
+inputForBlendMode.onchange = applyingBlendModes
 
 
 // // Funcion para agregar filtros a la imagen
@@ -306,46 +313,51 @@ const inputSaturation = document.getElementById ("saturation-slider")
 const inputNegative = document.getElementById ("negative-slider")
 
 
-inputBrightness.onchange = () => {
-  memeImage.style.filter = `brightness(${inputBrightness.value})`
+const applyingFilters = () => {
+
+  inputBrightness.onchange = () => {
+    memeImage.style.filter = `brightness(${inputBrightness.value})`
+  }
+  
+  inputOpacity.onchange = () => {
+    memeImage.style.filter = `opacity(${inputOpacity.value})`
+  }
+  
+  inputContrast.onchange = () => {
+    console.log (inputContrast.value)
+    memeImage.style.filter = `contrast(${inputContrast.value}%)`
+  }
+  
+  inputBlur.onchange = () => {
+    memeImage.style.filter = `blur(${inputBlur.value}px)`
+  }
+  
+  inputGrayScale.onchange = () => {
+    memeImage.style.filter = `grayscale(${inputGrayScale.value})`
+  }
+  
+  inputGrayScale.onchange = () => {
+    memeImage.style.filter = `grayscale(${inputGrayScale.value})`
+  }
+  
+  inputSepia.onchange = () => {
+    memeImage.style.filter = `sepia(${inputSepia.value})`
+  }
+  
+  inputHue.onchange = () => {
+    memeImage.style.filter = `hue-rotate(${inputHue.value}deg)`
+  }
+  
+  inputSaturation.onchange = () => {
+    memeImage.style.filter = `saturate(${inputSaturation.value}%)`
+  }
+  
+  inputNegative.onchange = () => {
+    memeImage.style.filter = `invert(${inputNegative.value})`
+  }
+
 }
 
-inputOpacity.onchange = () => {
-  memeImage.style.filter = `opacity(${inputOpacity.value})`
-}
-
-inputContrast.onchange = () => {
-  console.log (inputContrast.value)
-  memeImage.style.filter = `contrast(${inputContrast.value}%)`
-}
-
-inputBlur.onchange = () => {
-  memeImage.style.filter = `blur(${inputBlur.value}px)`
-}
-
-inputGrayScale.onchange = () => {
-  memeImage.style.filter = `grayscale(${inputGrayScale.value})`
-}
-
-inputGrayScale.onchange = () => {
-  memeImage.style.filter = `grayscale(${inputGrayScale.value})`
-}
-
-inputSepia.onchange = () => {
-  memeImage.style.filter = `sepia(${inputSepia.value})`
-}
-
-inputHue.onchange = () => {
-  memeImage.style.filter = `hue-rotate(${inputHue.value}deg)`
-}
-
-inputSaturation.onchange = () => {
-  memeImage.style.filter = `saturate(${inputSaturation.value}%)`
-}
-
-inputNegative.onchange = () => {
-  memeImage.style.filter = `invert(${inputNegative.value})`
-}
 
 // Funcion boton para reestablecer los filtros 
 
