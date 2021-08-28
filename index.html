@@ -30,7 +30,7 @@
                 <ul class="list-button-edition">
                     <li class="panel-button" id="image-panel-button"><i class="fas fa-images icon-header"></i>Imagen</li>
                     <li class="panel-button" id="text-panel-button"><i class="fas fa-heading icon-header"></i>Texto</li>
-                    <li class="panel-button"><i class="far fa-lightbulb icon-header"></i>Modo oscuro</li>
+                    <li class="panel-button" id="dark-mode"><i class="far fa-lightbulb icon-header"></i>Modo oscuro</li>
                 </ul>
             </div>
         </header>
@@ -76,10 +76,11 @@
             <div>
                 <h3>FONDO</h3>
 
-                <label>
-                    <input type="color" id="color-for-background" value="#FFFFFF" name="Color de fondo meme" class="input-custom-for-background"> 
-                    <span id="background-color" aria-hidden="true">#000000</span>
-                    <select id="blend-input" class="input-custom">
+                <div class="color-items">
+                    <div class="color-container input-custom">
+                        <input type="color" id="color-for-background"><span id="text-color-image-panel" aria-hidden="true">#000000</span>
+                    </div>
+                    <select id="blend-input" class="color-container input-custom">
                         <option value="none">Ninguno</option>
                         <option value="lighten">Aclarar</option>
                         <option value="dark">Oscurecer</option>
@@ -87,7 +88,7 @@
                         <option value="clarity">Luminosidad</option>
                         <option value="multiply">Multiplicar</option>
                     </select>
-                </label>
+                </div>
             </div>
             <div class="inputs-for-filters">
                 <h3>
