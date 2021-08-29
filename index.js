@@ -305,16 +305,16 @@ const applyingBlendModesForMemeContainer = () => {
     memeContainer.style.backgroundBlendMode = "normal"
   }
   else if (inputForBlendMode.value === "dark") {
-    memeContainerstyle.backgroundBlendMode = "darken"
+    memeContainer.style.backgroundBlendMode = "darken"
   }
   else if (inputForBlendMode.value === "sharpen") {
     memeContainer.style.backgroundBlendMode = "difference"
   }
   else if (inputForBlendMode.value === "clarity") {
-    memeContainerstyle.backgroundBlendMode = "luminosity"
+    memeContainer.style.backgroundBlendMode = "luminosity"
   }
   else if (inputForBlendMode.value === "multiply") {
-    memeContainerstyle.backgroundBlendMode = "multiply"
+    memeContainer.style.backgroundBlendMode = "multiply"
   }
 
 }
