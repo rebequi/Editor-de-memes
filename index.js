@@ -175,7 +175,7 @@ const transparentBackground = () => {
     memeContainer.style.backgroundImage = `url("${inputURLofImage.value}")`
     memeContainer.style.backgroundSize = "cover"
     memeImage.style.backgroundImage = "none"
-    applyingBlendModes()
+    applyingBlendModesForMemeContainer()
 
 
   }
@@ -293,6 +293,30 @@ const applyingBlendModes = () => {
       memeImage.style.backgroundBlendMode = "multiply"
     }
   
+}
+
+
+const applyingBlendModesForMemeContainer = () => {
+
+  if (inputForBlendMode.value === "lighten") {
+    memeContainer.style.backgroundBlendMode = "lighten"
+  }
+  else if (inputForBlendMode.value === "none") {
+    memeContainer.style.backgroundBlendMode = "normal"
+  }
+  else if (inputForBlendMode.value === "dark") {
+    memeContainerstyle.backgroundBlendMode = "darken"
+  }
+  else if (inputForBlendMode.value === "sharpen") {
+    memeContainer.style.backgroundBlendMode = "difference"
+  }
+  else if (inputForBlendMode.value === "clarity") {
+    memeContainerstyle.backgroundBlendMode = "luminosity"
+  }
+  else if (inputForBlendMode.value === "multiply") {
+    memeContainerstyle.backgroundBlendMode = "multiply"
+  }
+
 }
 
 inputForBlendMode.onchange = applyingBlendModes
