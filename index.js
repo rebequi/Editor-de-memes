@@ -29,9 +29,7 @@ const selectLineHeight = document.getElementById("line-height")
 
 // Ocultar textos sobre imagen
 const hideTopTextCheckbox = document.getElementById("hide-top-text-checkbox")
-const hideTopTextContainer = document.getElementById("top-text-container")
 const hideBottomTextCheckbox = document.getElementById("hide-bottom-text-checkbox")
-const hideBottomTextContainer = document.getElementById("bottom-text-container")
 
 // Variables de justificar textos
 const buttonAlignLeft = document.getElementById("text-left-align-button")
@@ -98,19 +96,19 @@ const hideText = (posicion) => {
   if (posicion === "top") {
     const hideTopTextCheckboxStatus = hideTopTextCheckbox.checked
     if (hideTopTextCheckboxStatus == true) {
-      hideTopTextContainer.style.display = "none"
+      topText.style.display = "none"
     } 
     else {
-      hideTopTextContainer.style.display = "block"
+      topText.style.display = "block"
     }
   }
   else {
     const hideBottomTextCheckboxStatus = hideBottomTextCheckbox.checked
     if (hideBottomTextCheckboxStatus == true) {
-      hideBottomTextContainer.style.display = "none"
+      bottomText.style.display = "none"
     } 
     else {
-      hideBottomTextContainer.style.display = "block"
+      bottomText.style.display = "block"
     }
   }
 }
@@ -174,13 +172,13 @@ const transparentBackground = () => {
     
     topText.style.position = "absolute"
     topText.style.backgroundColor = "transparent"
-    topText.style.left = "36%"
+    // topText.style.left = "36%"
     bottomText.style.position ="absolute"
     bottomText.style.backgroundColor ="transparent"
-    bottomText.style.bottom = "14%"
-    bottomText.style.left = "34%"
-    textAlignButtons ()
-    // hideTopTextContainer.style.display = "none"
+    // bottomText.style.bottom = "14%"
+    // bottomText.style.left = "34%"
+    // textAlignButtons ()
+    // topText.style.display = "none"
     // topText.style.backgroundColor = "transparent"
     // bottomText.style.backgroundColor = "transparent"
     // memeImage.style.backgroundImage = "stretch"
