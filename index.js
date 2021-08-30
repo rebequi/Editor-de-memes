@@ -170,20 +170,35 @@ const transparentBackground = () => {
   const transparentBackgroundStatus = hideBackgroundColor.checked
   const bgColorCode = backgroundColorInputText.value
   if (transparentBackgroundStatus == true) {
+    
+    
+    topText.style.position = "absolute"
     topText.style.backgroundColor = "transparent"
-    bottomText.style.backgroundColor = "transparent"
-    memeContainer.style.backgroundImage = `url("${inputURLofImage.value}")`
-    memeContainer.style.backgroundSize = "cover"
-    memeImage.style.backgroundImage = "none"
-    applyingBlendModesForMemeContainer()
+    topText.style.left = "36%"
+    bottomText.style.position ="absolute"
+    bottomText.style.backgroundColor ="transparent"
+    bottomText.style.bottom = "14%"
+    bottomText.style.left = "34%"
+    textAlignButtons ()
+    // hideTopTextContainer.style.display = "none"
+    // topText.style.backgroundColor = "transparent"
+    // bottomText.style.backgroundColor = "transparent"
+    // memeImage.style.backgroundImage = "stretch"
+    
+    // memeContainer.style.backgroundImage = `url("${inputURLofImage.value}")`
+    // memeContainer.style.backgroundSize = "cover"
+    // memeImage.style.backgroundImage = "none"
+    // applyingBlendModesForMemeContainer()
 
 
   }
   else {
     topText.style.backgroundColor = bgColorCode
     bottomText.style.backgroundColor = bgColorCode
-    memeImage.style.backgroundImage = `url("${inputURLofImage.value}")`
-    memeImage.style.backgroundSize = "cover"
+    topText.style.position = "static"
+    bottomText.style.position = "static"
+    // memeImage.style.backgroundImage = `url("${inputURLofImage.value}")`
+    // memeImage.style.backgroundSize = "cover"
   }
 }
 
@@ -296,29 +311,6 @@ const applyingBlendModes = () => {
 }
 
 
-const applyingBlendModesForMemeContainer = () => {
-
-  if (inputForBlendMode.value === "lighten") {
-    memeContainer.style.backgroundBlendMode = "lighten"
-  }
-  else if (inputForBlendMode.value === "none") {
-    memeContainer.style.backgroundBlendMode = "normal"
-  }
-  else if (inputForBlendMode.value === "dark") {
-    memeContainer.style.backgroundBlendMode = "darken"
-  }
-  else if (inputForBlendMode.value === "sharpen") {
-    memeContainer.style.backgroundBlendMode = "difference"
-  }
-  else if (inputForBlendMode.value === "clarity") {
-    memeContainer.style.backgroundBlendMode = "luminosity"
-  }
-  else if (inputForBlendMode.value === "multiply") {
-    memeContainer.style.backgroundBlendMode = "multiply"
-  }
-
-}
-
 inputForBlendMode.onchange = applyingBlendModes
 
 
@@ -336,8 +328,6 @@ const inputSepia = document.getElementById ("sepia-slider")
 const inputSaturation = document.getElementById ("saturation-slider")
 const inputNegative = document.getElementById ("negative-slider")
 
-
-const applyingFilters = () => {
 
   inputBrightness.onchange = () => {
     memeImage.style.filter = `brightness(${inputBrightness.value})`
@@ -380,7 +370,6 @@ const applyingFilters = () => {
     memeImage.style.filter = `invert(${inputNegative.value})`
   }
 
-}
 
 
 // Funcion boton para reestablecer los filtros 
