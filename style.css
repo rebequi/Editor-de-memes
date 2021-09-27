@@ -1,5 +1,8 @@
 
 /* //////////////// Estilos fuentes */
+/* Detalle, pero es mejor importar sus tipografias en HTML, ya que
+hace que la carga de la web sea mas rapida 
+Si importas en CSS de todos modos, esto debe ir arriba de todo */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&family=Varela+Round&display=swap');
 
 
@@ -11,6 +14,10 @@
 }
 body {
     display: flex;
+    /* Pesima decision. Si mi pantalla es mas pequeña que la suya, o si estoy desde un celular, 
+    no puedo hacer scroll para acceder a los elementos que me quedan tapados. 
+    Si el diseño me queda mal y tengo cosas que me sobresalen del body, debo corregir el diseño, 
+    en lugar de taparlo con overflow hidden. */
     overflow: hidden;
     font-size: 13px;
     font-family: 'Varela Round', sans-serif;
@@ -25,6 +32,27 @@ body {
 .dark-mode-theme {
     color: #fafafa;
 }
+
+/* No necesitan repetir todos los estilos en dark mode y light mode. Eso viola uno de los principios
+de programacion: no te repitas a vos misma! Mejor darle los estilos generales a los elementos y despues 
+modificar lo de dark mode y light mode. 
+Esto haria que sea mucho mas eficiente un cambio de diseño, ahora sería un lío 
+cambior cada cosa. 
+
+Por ejemplo, con header: */
+/* 
+header {
+    height: 100px;
+    padding: 10px;
+} 
+
+.dark-mode-theme header {
+    background-color: #341E48;
+}
+
+.light-mode-theme header {
+    background-color: #e5d4ed;
+} */
 
 .dark-mode-theme main {
     flex-grow: 10;
@@ -280,6 +308,7 @@ h3 {
 }
 
 .input-custom:focus {
+    /* ಠ_ಠ */
     outline: none;
 }
 
