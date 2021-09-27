@@ -1,4 +1,7 @@
 // ////////////////// >>>>>> SELECTORES PARA CAMBIAR DE PANEL 
+
+// no dejen espacio entre el metodo y los parentesis
+// const buttonForTextPanel = document.getElementById("text-panel-button")
 const buttonForTextPanel = document.getElementById ("text-panel-button")
 const buttonForImagePanel = document.getElementById ("image-panel-button")
 const imagePanel = document.getElementById("panel-for-image")
@@ -48,6 +51,7 @@ const backgroundColorInputText = document.getElementById("background-color-input
 const backgroundColorCode = document.getElementById("background-color")
 const hideBackgroundColor = document.getElementById("no-background-color")
 
+// no dejen console log en entregas
 console.log(darkModeThemeClass)
 
 // Funcion boton para modo claro-oscuro
@@ -59,21 +63,27 @@ const asideSection = document.getElementById ("aside")
 
 // Funciones para dark/light modes
 panelButtonLightMode.onclick = () => {
+  // ojooooo! aca no estan preguntando si panelButtonDarkMode esta en block, estan
+  // **asignando** su estilo como block
+  // recuerden que = no es lo mismo que === 
   if (panelButtonDarkMode.style.display = "block") {
     panelButtonLightMode.style.display = "none"
     document.body.classList.add("light-mode-theme")
     document.body.classList.remove("dark-mode-theme")
     
   }
+      /* ಠ_ಠ */
   console.log("claro")
 }
 
 panelButtonDarkMode.onclick = () => {
+      /*  mismo aca */
   if (panelButtonLightMode.style.display = "block") {
     panelButtonDarkMode.style.display = "none"
     document.body.classList.add("dark-mode-theme")
     document.body.classList.remove("light-mode-theme")
   }
+      /* ಠ_ಠ */
   console.log("oscuro")
 }
 
@@ -97,6 +107,8 @@ hideBottomTextCheckbox.onchange = () => hideText("bottom")
 const hideText = (posicion) => {
   if (posicion === "top") {
     const hideTopTextCheckboxStatus = hideTopTextCheckbox.checked
+    // no es necesario hacer comparaciones contra booleanos, es exactamente lo mismo decir esto:
+    // if (hideTopTextCheckboxStatus) {
     if (hideTopTextCheckboxStatus == true) {
       hideTopTextContainer.style.display = "none"
     } 
@@ -137,7 +149,7 @@ inputFontSize.onchange = fontSize
 buttonAlignLeft.onclick = () => textAlignButtons("left")
 buttonAlignCenter.onclick = () => textAlignButtons("center")
 buttonAlignRight.onclick = () => textAlignButtons("right")
-
+// hermosa esta funcion reutilizable!!
 const textAlignButtons = (selected) => {
   topText.style.textAlign = selected
   bottomText.style.textAlign = selected
@@ -169,6 +181,7 @@ backgroundColorInputText.oninput = bgColor
 const transparentBackground = () => {
   const transparentBackgroundStatus = hideBackgroundColor.checked
   const bgColorCode = backgroundColorInputText.value
+  // nuevamente aqui la comparacion con booleano no es necesaria
   if (transparentBackgroundStatus == true) {
     topText.style.backgroundColor = "transparent"
     bottomText.style.backgroundColor = "transparent"
@@ -191,7 +204,7 @@ hideBackgroundColor.oninput = transparentBackground
 buttonOutlineNone.onclick = () => outlineBorder("none")
 buttonOutlineLight.onclick = () => outlineBorder("light")
 buttonOutlineDark.onclick = () => outlineBorder("dark")
-
+// excelente!
 const outlineBorder = (mode) => {
   if (mode === "none") {
     topText.style.textShadow = "none"
@@ -217,6 +230,7 @@ const inputSpacingValue = (space) => {
 inputSpacing.onchange = inputSpacingValue
 
 // Funcion de espaciado
+// no necesitan este param aqui
 const lineHeight = (space) => {
   const lineHeightValue = selectLineHeight.value
   topText.style.lineHeight = lineHeightValue
@@ -229,6 +243,10 @@ selectLineHeight.onchange = lineHeight
 // Funcion para abrir el panel de Imagen
 
 const showImagePanel = () => {
+  // ojo aca. textPanelIsOn va a ser siempre true. estan asignando, no preguntando. 
+  // o sea: textPanelIsOn es igual a darle el valor block a textPanel ?? Y despues usan eso en un if, 
+  // pero esos siempre va a ser true
+  // Aca hay una confusion importante. Me serviria que me aclararan que trataron de hacer. 
     const textPanelIsOn = textPanel.style.display = "block"
     if (textPanelIsOn) {
         imagePanel.style.display = "block"
@@ -243,6 +261,7 @@ buttonForImagePanel.onclick = showImagePanel
 // Funcion para abrir el panel de Texto
 
 const showTextPanel = () => {
+  // ojo aca. ImagePanelIsOn va a ser siempre true. estan asignando, no preguntando. Mismo que arriba
     const ImagePanelIsOn = imagePanel.style.display = "block"
     if (ImagePanelIsOn) {
         textPanel.style.display = "block"
@@ -270,6 +289,12 @@ backgroundColorInput.oninput = () => {
 }
 
 inputForBlendMode.onchange = () => {
+  // esta funcion podria ser muchisimo mas breve, porque tienen ya toda la info que necesitan 
+  // sin que haga falta un if 
+
+  // inputForBlendMode.onchange = () => {
+  //   memeImage.style.backgroundBlendMode = inputForBlendMode.value
+  // }  
   if (inputForBlendMode.value === "lighten") {
     memeImage.style.backgroundBlendMode = "lighten"
   }
@@ -306,6 +331,33 @@ const inputSaturation = document.getElementById ("saturation-slider")
 const inputNegative = document.getElementById ("negative-slider")
 
 
+// El problema de resolver la funcionalidad de esta manera es que los filtros se pisan entre si
+// Al decir " memeImage.style.filter = " estoy diciendo "va a ser igual a esto, y reemplazar 
+// cualquier valor que tuviera antes" 
+// Por eso si establezco un brillo, y despues opacidad, el valor del brillo se pierde
+// Una manera de resolverlo es asignar todas las variables a la vez:
+
+// const cambiarFiltros = () => {
+//     imagen.style.filter = `
+//     brightness(${inputBrightness.value}) opacity(${inputOpacity.value}) 
+//     blur(${inputBlur.value}px) contrast(${inputContrast.value}%) 
+//     grayscale(${inputGrayScale.value}%) hue-rotate(${inputHue.value}deg) 
+//     sepia(${inputSepia.value}%) saturate(${inputSaturation.value}%) invert(${inputNegative.value})
+//     `;
+// }
+
+// Y despues, cada funcion onchange llama a la misma: 
+
+// inputBrightness.onchange =  cambiarFiltros
+// inputOpacity.onchange = cambiarFiltros
+// inputContrast.onchange =  cambiarFiltros
+// inputBlur.onchange =  cambiarFiltros
+// inputGrayScale.onchange = cambiarFiltros
+// inputSepia.onchange =  cambiarFiltros
+// inputHue.onchange = cambiarFiltros
+// inputSaturation.onchange = cambiarFiltros
+// inputNegative.onchange = cambiarFiltros
+
 inputBrightness.onchange = () => {
   memeImage.style.filter = `brightness(${inputBrightness.value})`
 }
@@ -326,7 +378,7 @@ inputBlur.onchange = () => {
 inputGrayScale.onchange = () => {
   memeImage.style.filter = `grayscale(${inputGrayScale.value})`
 }
-
+// ojo, aca esta repetido
 inputGrayScale.onchange = () => {
   memeImage.style.filter = `grayscale(${inputGrayScale.value})`
 }
@@ -352,6 +404,11 @@ inputNegative.onchange = () => {
 const removeFiltersButton = document.getElementById("go-back-button")
 
 const removeFilters = () => {
+  // no entiendo que trataron de hacer aca. 
+  // Las variables son iguales a una funcion! No tiene sentido despues ponerlas en un if. 
+  // Creo que es la misma confusion que en showImagePanel. Por favor expliquenme que trataron de hacer
+  // asi puedo explicarles mejor
+  
   const inputForBrightnessIsOn = inputBrightness.onchange
   const inputForOpacityIsOn = inputOpacity.onchange
   const inputForContrastIsOn = inputContrast.onchange

@@ -28,6 +28,12 @@
 
             <div class="edition-buttons-container">
                 <ul class="list-button-edition">
+                    <!-- Cuando se haga muy largo, agreguen saltos de linea para que el lector no deba 
+                    hacer scroll horizontal
+                    <li class="panel-button" id="image-panel-button">
+                        <i class="fas fa-images icon-header"></i>
+                        Imagen
+                    </li> -->
                     <li class="panel-button" id="image-panel-button"><i class="fas fa-images icon-header"></i>Imagen</li>
                     <li class="panel-button" id="text-panel-button"><i class="fas fa-heading icon-header"></i>Texto</li>
                     <li class="panel-button" id="light-mode"><i class="fas fa-lightbulb icon-header"></i></i>Modo claro</li>
@@ -71,8 +77,11 @@
             </h2>
             <div>
                 <h3>
-                    URL
+                    <!-- Esto es un label, no un titulo. No piensen en su estilo, piensen en su funcion
+                    El lector  -->
+                    URL 
                 </h3>
+                <!-- Este label no hace nada.  -->
                 <label> <input type="text" id="input-for-url" class="input-custom"></label>
             </div>
             <div>
@@ -81,10 +90,12 @@
                 <div class="color-items">
                     <div class="color-container">
                         <div class="input-custom">
+                            <!-- Aqui hace falta un aria label, como sabe el lector de pantalla que hace este input? -->
                             <input type="color" id="color-for-background"><span id="text-color-image-panel" aria-hidden="true">#000000</span>
                             </div>
                     </div>
                     <div class="color-container">
+                        <!-- Mismo aqui -->
                         <select id="blend-input" class="color-container input-custom">
                             <option value="none">Ninguno</option>
                             <option value="lighten">Aclarar</option>
@@ -200,6 +211,7 @@
             </h2>
             <div class="text-option-container">
                 <h3>
+                    <!-- Este deberia ser el label de textarea -->
                     SUPERIOR
                 </h3>
                 <label>
@@ -228,6 +240,7 @@
             <!-- TIPO DE FUENTE -->
             <div class="text-option-container">
                 <h3>FUENTE</h3>
+                <!-- Aqui hace falta o un label o aria-label -->
                 <select name="Font family" id="font-family-select" class="input-custom">
                     <option value="Arial">Arial</option>
                     <option value="Arial Black">Arial Black</option>
@@ -246,6 +259,7 @@
                         <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="input-custom" id="font-size-input" value="44" min="12">
                     </div>
                     <div class="buttons-container">
+                        <!-- Aqui hacen falta labels, como puede saber el lector de pantalla que hacen estos botones? -->
                         <button class="button" id="text-left-align-button">
                             <i class="fas fa-align-left" aria-hidden="true"></i>
                         </button>
